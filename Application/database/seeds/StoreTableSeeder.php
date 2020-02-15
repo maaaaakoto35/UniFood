@@ -12,9 +12,13 @@ class StoreTableSeeder extends Seeder
      */
     public function run()
     {
-        $stores =  [
-            ['はんなり食堂', 37, '10号館'],
-        ];
-        DB::insert($stores);
+        DB::table('store')->insert([
+            [
+              'store_name' => 'はんなり食堂',
+              'foods' => '37',
+              'place' => '10号館',
+            ],
+          ]);
     }
 }
+?>

@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    //
+    protected $table = 'store';
+
+    protected $fillable = ['store_name', 'foods', 'place'];
+
+    public function scopeStore($query, $store_name){
+        $query->where('store_name', $store_name);
+    }
 }
+?>
