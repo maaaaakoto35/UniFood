@@ -10,7 +10,15 @@ class StoresController extends Controller
     // =========index=========
     public function index(){
         $stores = Store::latest()->get();
-        return view('store.index')->with('stores', $stores);
+        $side_list = [
+            'UniFoodとは?',
+            '学食検索',
+            '無料会員登録',
+            '口コミ投稿',
+            'ログイン',
+        ];
+        return view('index')->with('stores', $stores)
+                            ->with('side_list', $side_list);
     }
 
     // =========detail=========

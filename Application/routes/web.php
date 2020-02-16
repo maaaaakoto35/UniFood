@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'StoresController@index');
+Route::get('/', 'StoresController@index')->name('index');
 Route::get('/detail', 'StoresController@detail');
 Route::get('/add_store', 'StoresController@add_store');

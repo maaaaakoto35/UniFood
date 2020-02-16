@@ -1,0 +1,24 @@
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+  }
+  .top-link {
+      float: right;
+  }
+  .show_stores {
+    width: 80%;
+    float: left;
+  }
+  .side {
+    width: 20%;
+    float: right;
+  }
+  .footer {
+    margin-top: auto;
+    border:  solid 1px;
+    width:1000px;
+    height:60px;
+  }
