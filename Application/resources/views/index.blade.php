@@ -23,7 +23,8 @@
             {{-- 食堂の表示 --}}
             <div class="show_stores">
                 @foreach ($stores as $key => $store)
-                    <p>店の名前{{$store['store_name']}}</p>
+                    <p>店名 {{$store['store_name']}}</p>
+                    <div><img src="img/{{$store['store_name']}}/Shokudo.jpg" alt="食堂"></div>
                 @endforeach
             </div>
 
