@@ -25,7 +25,6 @@ class StoresController extends Controller
 
     // =========isStore=========
     public function isStore(Request $isStore){
-        $isStore = int($isStore);
         if ($isStore == 0) {
             return view('index')->with('is_store', true);
         } else {
