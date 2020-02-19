@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,7 @@
 */
 
 Route::get('/', 'StoresController@index')->name('index');
+Route::post('/', 'StoresController@isStore', function(Request $request){})->name('is_store');
+Route::post('/', 'StoresController@search', function(Request $request){})->name('search');
 Route::get('/detail', 'StoresController@detail');
 Route::get('/add_store', 'StoresController@add_store');

@@ -11,15 +11,42 @@
     <div class="wrapper">
         <div class="top">
             {{-- topページのリンク --}}
-            <div class="top-link">
+            <div class="top-_ink">
                 <a href="{{ route('index') }}">TOPページ</a>
             </div>
 
             {{-- タイトル --}}
-            <h1>京都産業大学の食堂</h1>
+            <h1>Student Cafeteria</h1>
         </div>
 
         <div class="main">
+            {{-- $is_storeがTRUEの時は店舗検索、FALSEの時はメニュー検索をするようにgetSearchメソッドに飛ぶ --}}
+            <div class="search">
+                <form action="/index" method="POST">
+                    {{ csrf_field() }}
+                    <div class="store_button">
+                        <input type="hidden" id="1">
+                        <input id="submit_button" type="submit" value="店舗検索">
+                    </div>
+                    <div class="food_button">
+                        <input type="hidden" id="0">
+                        <input id="submit_button" type="submit" value="メニュー">
+                    </div>
+                </form>
+
+                @if ($is_store == true)
+                    <form action="/index/search" method="POST">
+                        <input type="text" name="store" size="60" placeholder="店舗検索"><br>
+                        <input id="submit_button" type="submit"" value="検索">
+                    </form>
+                @elseif($is_store = false)
+                    <form action="/index/search" method="POST">
+                        <input type="text" name="store" size="60" placeholder="メニュー"><br>
+                        <input id="submit_button" type="submit"" value="検索">
+                    </form>
+                @endif
+            </div>
+
             {{-- 食堂の表示 --}}
             <div class="show_stores">
                 @foreach ($stores as $key => $store)

@@ -17,8 +17,25 @@ class StoresController extends Controller
             '口コミ投稿',
             'ログイン',
         ];
+        $is_store = true;
         return view('index')->with('stores', $stores)
-                            ->with('side_list', $side_list);
+                            ->with('side_list', $side_list)
+                            ->with('is_store', $is_store);
+    }
+
+    // =========isStore=========
+    public function isStore(Request $isStore){
+        $isStore = int($isStore);
+        if ($isStore == 0) {
+            return view('index')->with('is_store', true);
+        } else {
+            return view('index')->with('is_store', false);
+        }
+    }
+
+    // =========search=========
+    public function search(Request $store_name){
+        //
     }
 
     // =========detail=========
