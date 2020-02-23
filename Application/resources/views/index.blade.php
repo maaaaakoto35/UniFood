@@ -22,28 +22,35 @@
         <div class="main">
             {{-- $is_storeがTRUEの時は店舗検索、FALSEの時はメニュー検索をするようにgetSearchメソッドに飛ぶ --}}
             <div class="search">
-                <form action="/index" method="POST">
+                <form action="/" method="POST">
                     {{ csrf_field() }}
                     <div class="store_button">
-                        <input type="hidden" id="1">
+                        <input type="hidden" name="id" value="1">
                         <input id="submit_button" type="submit" value="店舗検索">
                     </div>
+                </form>
+
+                <form action="/" method="POST">
+                    {{ csrf_field() }}
                     <div class="food_button">
-                        <input type="hidden" id="0">
+                        <input type="hidden" name="id" value="0">
                         <input id="submit_button" type="submit" value="メニュー">
                     </div>
                 </form>
 
-                @if ($is_store == true)
-                    <form action="/index/search" method="POST">
-                        <input type="text" name="store" size="60" placeholder="店舗検索"><br>
-                        <input id="submit_button" type="submit"" value="検索">
-                    </form>
-                @elseif($is_store = false)
-                    <form action="/index/search" method="POST">
-                        <input type="text" name="store" size="60" placeholder="メニュー"><br>
-                        <input id="submit_button" type="submit"" value="検索">
-                    </form>
+                @if (isset($is_store))
+                    <p>{{$is_store}}</p>
+                    @if ($is_store == 1)
+                        <form action="/search" method="POST">
+                            <input type="text" name="store" size="60" placeholder="店舗検索"><br>
+                            <input id="submit_button" type="submit"" value="検索">
+                        </form>
+                    @elseif($is_store == 0)
+                        <form action="/search" method="POST">
+                            <input type="text" name="store" size="60" placeholder="メニュー"><br>
+                            <input id="submit_button" type="submit"" value="検索">
+                        </form>
+                    @endif
                 @endif
             </div>
 
