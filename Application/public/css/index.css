@@ -1,15 +1,16 @@
 .wrapper {
-    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     min-height: 100vh
   }
   .top-link {
-      float: right;
+    float: right;
   }
-  .show_stores {
+  .slider {
+    overflow:visible!important; /* 両サイドに前後の画像を表示させる */
     width: 80%;
+    margin: 0 auto;             /* 画面中央にする */
     float: left;
   }
   .side {
@@ -19,6 +20,5 @@
   .footer {
     margin-top: auto;
     border:  solid 1px;
-    width:1000px;
     height:60px;
   }

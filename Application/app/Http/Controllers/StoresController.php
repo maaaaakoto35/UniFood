@@ -20,7 +20,8 @@ class StoresController extends Controller
         ];
         return view('index')->with('stores', $stores)
                             ->with('side_list', $sideList)
-                            ->with('is_store', null);
+                            ->with('is_store', null)
+                            ->with('result', null);
     }
 
     // =========isStore=========
@@ -47,8 +48,30 @@ class StoresController extends Controller
     }
 
     // =========search=========
-    public function search(Request $store_name){
-        //
+    public function search(Request $request){
+        if ($keyword = $request->input('store')) {
+            $query = Store::query();
+            $query->where('store_name', 'like', '%'.$keyword.'%');
+            $result = $query->paginate(10);
+
+            return view('search')->with('result', $result)
+                                 ->with('keyword', $keyword)
+                                 ->with('button', 'store');
+        } elseif ($keyword = $request->input('menu')) {
+            $query = Store::query();
+            $query->where('store_name', 'like', '%'.$keyword.'%');
+            $result = $query->paginate(10);
+
+            return view('search')->with('result', $result)
+                                 ->with('keyword', $keyword)
+                                 ->with('button', 'meny');
+        } else {
+            $stores = Store::latest()->get();
+            return view('search')->with('stores', $stores);
+        }
+
+        return view('search')->with('result', $result)
+                             ->with('keyword', $keyword);
     }
 
     // =========detail=========
