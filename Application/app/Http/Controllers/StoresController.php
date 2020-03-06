@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Store;
+use App\Menu;
 
 class StoresController extends Controller
 {
@@ -51,27 +52,24 @@ class StoresController extends Controller
     public function search(Request $request){
         if ($keyword = $request->input('store')) {
             $query = Store::query();
-            $query->where('store_name', 'like', '%'.$keyword.'%');
+            $query->where('store_jname', 'like', '%'.$keyword.'%');
             $result = $query->paginate(10);
 
             return view('search')->with('result', $result)
                                  ->with('keyword', $keyword)
-                                 ->with('button', 'store');
+                                 ->with('button', 1);
         } elseif ($keyword = $request->input('menu')) {
-            $query = Store::query();
-            $query->where('store_name', 'like', '%'.$keyword.'%');
+            $query = Menu::query();
+            $query->where('food_name', 'like', '%'.$keyword.'%');
             $result = $query->paginate(10);
 
             return view('search')->with('result', $result)
                                  ->with('keyword', $keyword)
-                                 ->with('button', 'meny');
+                                 ->with('button', 0);
         } else {
             $stores = Store::latest()->get();
             return view('search')->with('stores', $stores);
         }
-
-        return view('search')->with('result', $result)
-                             ->with('keyword', $keyword);
     }
 
     // =========detail=========

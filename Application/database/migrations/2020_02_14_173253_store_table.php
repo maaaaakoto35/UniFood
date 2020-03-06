@@ -16,7 +16,8 @@ class StoreTable extends Migration
         //tableの作成
         Schema::create('store', function (Blueprint $table) {
             $table->increments('id'); //店のid(auto)
-            $table->string('store_name'); //店名
+            $table->string('store_name'); //店名_roma次
+            $table->string('store_jname'); //店名
             $table->integer('foods'); //品数
             $table->string('place'); //何号館？
             $table->timestamps();

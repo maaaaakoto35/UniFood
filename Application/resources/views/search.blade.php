@@ -10,7 +10,7 @@
     <div class="wrapper">
         <h1>検索結果</h1>
 
-        @if (isset($keyword) && isset($result))
+        @if (isset($keyword))
             <div class="search">
                 <form action="/" method="POST">
                     {{ csrf_field() }}
@@ -28,17 +28,17 @@
                     </div>
                 </form>
 
-                @if (isset($is_store))
-                    @if ($is_store == 1)
+                @if (isset($button))
+                    @if ($button == 1)
                         <form action="/search" method="POST">
                             {{ csrf_field() }}
-                            <input type="text" name="store" size="60" placeholder="店舗検索"><br>
+                            <input type="text" name="store" size="60" value="{{$keyword}}"><br>
                             <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索"></a>
                         </form>
-                    @elseif($is_store == 0)
+                    @elseif($button == 0)
                         <form action="/search" method="POST">
                             {{ csrf_field() }}
-                            <input type="text" name="menu" size="60" placeholder="メニュー検索"><br>
+                            <input type="text" name="menu" size="60" value="{{$keyword}}"><br>
                             <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索"></a>
                         </form>
                     @endif
@@ -54,15 +54,28 @@
             <p>done!!</p>
         @endif
 
-        @if (isset($is_store))
+        @if (isset($button) && isset($result))
             <div class="result">
-                @if ($is_store == 1)
+                @if ($button == 1)
                     @foreach ($result as $key => $value)
-                        <p>{{$value}}</p>
+                        <p>店名 {{$value['store_name']}}</p>
+                        <p>品数 {{$value['foods']}}</p>
+                        <p>場所 {{$value['place']}}</p>
+                        <form action="/detail" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" value="{{$value['store_name']}}" name="value">
+                            <a href="/detail/{{$value['store_name']}}"><input type="submit"></a>
+                        </form>
                     @endforeach
-                @elseif ($is_store == 0)
+                @elseif ($button == 0)
                     @foreach ($result as $key => $value)
-                        <p>{{$value}}</p>
+                        <p>品名 {{$value['food_name']}}</p>
+                        <p>店名 {{$value['store_name']}}</p>
+                        <form action="/detail" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" value="{{$value['store_name']}}" name="value">
+                            <a href="/detail/{{$value['store_name']}}"><input type="submit"></a>
+                        </form>
                     @endforeach
                 @endif
             </div>

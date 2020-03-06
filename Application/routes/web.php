@@ -17,5 +17,6 @@ Route::get('/', 'StoresController@index')->name('index');
 Route::post('/', 'StoresController@isStore')->name('is_store');
 Route::post('/search', 'StoresController@search');
 Route::get('/search', 'StoresController@search')->name('search');
-Route::get('/detail', 'StoresController@detail');
+Route::get('/detail', 'DetailsController@index');
+Route::post('/detail', 'DetailsController@storeShow')->name('store_show');
 Route::get('/add_store', 'StoresController@add_store');
