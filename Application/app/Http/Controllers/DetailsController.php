@@ -15,14 +15,17 @@ class DetailsController extends Controller
 
     // =========storeShow=========
     public function storeShow (Request $request){
-        $storeName = $request->input('value');
-        $query = Store::query();
-        $query->where('store_name = '.$storeName);
-        $result = $query;
-        $view = 'detail/'.$storeName;
-        var_dump($storeName);
+        if($storeName = $request->input('value')) {
+            $query = Store::query();
+            $query->where('store_name', '=', $storeName);
+            $result = $query->first();
+            $view = 'detail/'.$storeName;
+            // var_dump($result['id']);
 
-        return view($view)->with('result', $result);
+            return view($view)->with('result', $result);
+        } else {
+            return view('index');
+        }
     }
 
 }
