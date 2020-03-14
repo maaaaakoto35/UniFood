@@ -3,22 +3,49 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh
-  }
-  .top-link {
-    float: right;
-  }
-  .slider {
-    overflow:visible!important; /* 両サイドに前後の画像を表示させる */
-    width: 80%;
-    margin: 0 auto;             /* 画面中央にする */
-    float: left;
-  }
-  .side {
-    width: 20%;
-    float: right;
-  }
-  .footer {
-    margin-top: auto;
-    border:  solid 1px;
-    height:60px;
-  }
+}
+.top-link {
+  float: right;
+}
+.search {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.search_button {
+  display: inline-block;
+  height: 30px;
+}
+.store_button {
+  display: block;
+}
+.food_button {
+  float: right;
+}
+.search_form {
+  display: flex;
+  height: auto;
+}
+.form_text {
+  display: inline-block;
+  height: 38px;
+}
+.form_button {
+  display: inline-block;
+  height: auto;
+}
+.slider {
+  overflow:visible!important; /* 両サイドに前後の画像を表示させる */
+  width: 80%;
+  margin: 0 auto;             /* 画面中央にする */
+  display: inline-block;
+}
+.side {
+  width: 20%;
+  float: right;
+}
+.footer {
+  margin-top: auto;
+  border:  solid 1px;
+  height:60px;
+}

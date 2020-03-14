@@ -5,21 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Cafeteria</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-    <script type="text/javascript">
-            $(document).ready(function(){
-                $('.slider').bxSlider({
-                    auto: true,
-                    pause: 5000,
-                    centerMode: true,
-                    centerPadding: '10%'
-                });
-            });
-    </script>
 </head>
 <body>
     <div class="wrapper">
