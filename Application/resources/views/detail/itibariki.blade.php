@@ -23,7 +23,7 @@
 
         <div class="contents">
             <div class="slider">
-                <img src="{{ asset('img/itibariki/Shokudo.jpg') }}" width="280" height="210" alt="logo">
+                <img src="{{ asset('img/'.$result["store_name"].'/Shokudo.jpg') }}" width="280" height="210" alt="logo">
                 {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
                 <img src="img/foods/food3.jpg" width="240" height="180" alt="">
                 <img src="img/foods/food4.jpg" width="240" height="180" alt="">
@@ -50,6 +50,19 @@
                     一度食べたら離れられない味だが、カロリーが絶対高い<br>
                 </div>
             </div>
+        </div>
+
+        {{$result["open_time"]}}
+
+        <div class="menus">
+            @foreach ($menus as &$menu)
+                <span>{{$menu["food_name"]}}</span>
+                <span>{{$menu["price"]}}円</span>
+            @endforeach
+        </div>
+
+        <div class="review">
+            <h1>口コミの表示</h1>
         </div>
     </div>
 </body>

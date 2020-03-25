@@ -14,10 +14,16 @@ class DetailsController extends Controller
             $query = Store::query();
             $query->where('store_name', '=', $storeName);
             $result = $query->first();
+
+            $query2 = Menu::query();
+            $query2->where('store_name', '=', $storeName);
+            $menus = $query2->get();
+
             $view = 'detail/'.$storeName;
             // var_dump($result['id']);
 
-            return view($view)->with('result', $result);
+            return view($view)->with('result', $result)
+                              ->with('menus', $menus);
         } else {
             return view('index');
         }

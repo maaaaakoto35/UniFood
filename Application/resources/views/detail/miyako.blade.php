@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ふじカツ</title>
+    <title>MIYAKO製麺</title>
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 </head>
 <body>
@@ -44,10 +44,9 @@
                 </div>
 
                 <div class="sentense">
-                    ボリュームたっぷりのメニューが多数。<br>
-                    注文を受けてから１枚ずつ揚げるので、<br>
-                    いつでも熱々でサクサクのカツが。<br>
-                    一番美味しい学食とも言われている。<br>
+                    毎日店内で製麺しており、<br>
+                    茹で立ての本格的なうどんを提供している。<br>
+                    マヨから丼も美味しいよ!!!<br>
                 </div>
             </div>
         </div>

@@ -9,13 +9,15 @@
     display: inline-block;
 }
 .contents {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
 }
 .slider {
     display: inline-block;
     padding-right: 5%;
+    vertical-align: top;
 }
 .detail {
     display: inline-block;
+    vertical-align: top;
 }

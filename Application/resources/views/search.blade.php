@@ -76,7 +76,7 @@
                     @foreach ($result as $key => $value)
                         <a href="/detail/?value={{$value['store_name']}}">
                             <div class="detail">
-                                <h2 style="display: inline-block">{{$value['store_name']}}</h2>
+                                <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
                                 <p style="display: inline-block">{{$value['detail']}}/</p>
                                 <p style="display: inline-block">{{$value['foods']}}品</p><br>
                                 <h2>{{$value['rate']}}</h2>
@@ -92,7 +92,7 @@
                         <a href="/detail/?value={{$value['store_name']}}">
                             <div class="detail">
                                 <h2 style="display: inline-block">{{$value['food_name']}}</h2>
-                                <h2 style="display: inline-block">{{$value['store_name']}}</h2>
+                                <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
                                 <p style="display: inline-block">{{$value['detail']}}/</p>
                                 <p style="display: inline-block">{{$value['foods']}}品</p><br>
                                 <h2>{{$value['rate']}}</h2>
