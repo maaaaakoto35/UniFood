@@ -57,6 +57,7 @@ class StoresController extends Controller
 
             return view('search')->with('result', $result)
                                  ->with('keyword', $keyword)
+                                 ->with('amount', count($result))
                                  ->with('button', 1);
         } elseif ($keyword = $request->input('menu')) {
             $query = Menu::query();
@@ -65,6 +66,7 @@ class StoresController extends Controller
 
             return view('search')->with('result', $result)
                                  ->with('keyword', $keyword)
+                                 ->with('amount', count($result))
                                  ->with('button', 0);
         } else {
             $stores = Store::latest()->get();

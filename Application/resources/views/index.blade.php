@@ -26,7 +26,7 @@
     <div class="wrapper">
         <div class="top">
             {{-- topページのリンク --}}
-            <div class="top-_ink">
+            <div class="top-ink" style="float: right;">
                 <a href="{{ route('index') }}">TOPページ</a>
             </div>
 
@@ -34,7 +34,7 @@
             <div class="title">
                 <h1>Student Cafeteria</h1>
             </div>
-        </div>
+        </div><br>
 
         <div class="main">
             {{-- $is_storeがTRUEの時は店舗検索、FALSEの時はメニュー検索をするようにgetSearchメソッドに飛ぶ --}}
@@ -42,18 +42,14 @@
                 <div class="search_button">
                     <form action="/" method="POST">
                         {{ csrf_field() }}
-                        <div class="store_button">
-                            <input type="hidden" name="id" value="1">
-                            <input id="submit_button" type="submit" value="店舗検索">
-                        </div>
+                        <input type="hidden" name="id" value="1">
+                        <input id="submit_button" type="submit" value="店舗検索" class="store_button">
                     </form>
 
                     <form action="/" method="POST">
                         {{ csrf_field() }}
-                        <div class="food_button">
-                            <input type="hidden" name="id" value="0">
-                            <input id="submit_button" type="submit" value="メニュー">
-                        </div>
+                        <input type="hidden" name="id" value="0">
+                        <input id="submit_button" type="submit" value="メニュー" class="food_button">
                     </form>
                 </div>
 
@@ -63,36 +59,30 @@
                             <form action="/search" method="POST">
                                 {{ csrf_field() }}
                                 <div class="form_text">
-                                    <input type="text" name="store" size="60" placeholder="店舗検索" style="display: inline-block; height: 3em;"><br>
+                                    <input type="text" name="store" size="60" placeholder="店舗検索" style="display: inline-block; height: 50px; font-size: large;"><br>
                                 </div>
-                                <div class="form_button">
-                                    <a href="/search"><input id="submit_button" type="submit"" value="検索"></a>
-                                </div>
+                                <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
                         @elseif($is_store == 0)
                             <form action="/search" method="POST">
                                 {{ csrf_field() }}
                                 <div class="form_text">
-                                    <input type="text" name="menu" size="60" placeholder="メニュー検索" style="display: inline-block; height: 3em;"><br>
+                                    <input type="text" name="menu" size="60" placeholder="メニュー検索" style="display: inline-block; height: 50px; font-size: large;"><br>
                                 </div>
-                                <div class="form_button">
-                                    <a href="/search" style="display: inlie-block;"><input id="submit_button" type="submit"" value="検索"></a>
-                                </div>
+                                <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
                         @endif
                     @else
                         <form action="/search" method="POST">
                             {{ csrf_field() }}
-                            <div class="form_button">
-                                <input type="text" name="store" size="60" placeholder="店舗かメニューかを選択してください" style="display: inline-block; height: 3em;"><br>
+                            <div class="form_text">
+                                <input type="text" name="store" size="60" placeholder="店舗かメニューかを選択してください" style="display: inline-block; height: 50px; font-size: large;"><br>
                             </div>
-                            <div class="form_button">
-                                <a href="/search" style="display: inlie-block;"><input id="submit_button" type="submit"" value="検索"></a>
-                            </div>
+                            <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                         </form>
                     @endif
                 </div>
-            </div>
+            </div><br>
 
             <div class="slider">
                 <img src="img/foods/food1.jpg" alt="">

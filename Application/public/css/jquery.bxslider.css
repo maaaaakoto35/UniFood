@@ -3,7 +3,9 @@
 /** RESET AND LAYOUT
 ===================================*/
 .bx-wrapper {
-  position: relative;
+  display: inline-block;
+
+  width: 80%;;
   margin-bottom: 60px;
   padding: 0;
   *zoom: 1;
@@ -37,8 +39,7 @@ ul.bxslider {
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
-  bottom: -30px;
-  width: 100%;
+  width: 80%;
 }
 /* LOADER */
 .bx-wrapper .bx-loading {
@@ -90,7 +91,7 @@ ul.bxslider {
 }
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-wrapper .bx-prev {
-  left: 10px;
+  left: 2%;
   background: url('../img/slider/controls.png') no-repeat 0 -32px;
 }
 .bx-wrapper .bx-prev:hover,
@@ -98,16 +99,16 @@ ul.bxslider {
   background-position: 0 0;
 }
 .bx-wrapper .bx-next {
-  right: 10px;
+  right: 20%;
   background: url('../img/slider/controls.png') no-repeat -43px -32px;
 }
 .bx-wrapper .bx-next:hover,
 .bx-wrapper .bx-next:focus {
-  background-position: -43px 0;
+  background-position: 0px 0;
 }
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
-  top: 50%;
+  top: 65%;
   margin-top: -16px;
   outline: 0;
   width: 32px;

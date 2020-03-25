@@ -1,29 +1,96 @@
 .wrapper {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh
+  margin: 0 auto;
+  flex-direction: column;
+}
+.top {
+  height: 200px;
 }
 .top-link {
+  display: block;
   float: right;
 }
+.title {
+  display: inline-block;
+  position: absolute;          /* 位置指定 */
+  top: 100px;                    /* 親要素の半分下にずらす */
+  left: 50%;                   /* 親要素の半分右にずらす */
+  transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+  text-align: center;
+}
 .search {
+  text-align: center;
   display: flex;
+  justify-content: center;
   width: 100%;
-  height: auto;
+  height: 70px;
 }
 .search_button {
   display: inline-block;
-  height: 30px;
-}
-.store_button {
-  display: block;
-}
-.food_button {
-  float: right;
 }
 .search_form {
-  display: flex;
+  display: inline-block;
+}
+.submit_button {
+  position: relative;
+  width: 58px;
+  height: 35px;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.3em 0.5em;
+  background: #00bcd4;
+  border-top: solid 3px #00a3d4;
+  border-bottom: solid 3px #00a3d4;
+  transition: .4s;
+}
+.submit_button:hover {
+  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+               6px 0px 15px rgba(255, 255, 240, 0.83);
+}
+.store_button {
+  position: relative;
+  height: 29px;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.3em 0.5em;
+  background: #00bcd4;
+  border-top: solid 3px #00a3d4;
+  border-bottom: solid 3px #00a3d4;
+  transition: .4s;
+}
+.store_button:hover {
+  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+               6px 0px 15px rgba(255, 255, 240, 0.83);
+}
+.food_button {
+  position: relative;
+  height: 29px;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.3em 0.5em;
+  background: #00bcd4;
+  border-top: solid 3px #00a3d4;
+  border-bottom: solid 3px #00a3d4;
+  transition: .4s;
+}
+.food_button:hover {
+  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+               6px 0px 15px rgba(255, 255, 240, 0.83);
+}
+.search_form {
+  display: inline-block;
   height: auto;
 }
 .form_text {
@@ -34,14 +101,9 @@
   display: inline-block;
   height: auto;
 }
-.slider {
-  overflow:visible!important; /* 両サイドに前後の画像を表示させる */
-  width: 80%;
-  margin: 0 auto;             /* 画面中央にする */
-  display: inline-block;
-}
+
 .side {
-  width: 20%;
+  width: 18%;
   float: right;
 }
 .footer {

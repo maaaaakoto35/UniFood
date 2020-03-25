@@ -12,7 +12,7 @@
             <h1>{{$result["store_jname"]}}</h1>
         </div>
         <div class="slider">
-            <img src="img/{{$result['store_name']}}/Shokudo.jpg" width="240" height="180" alt="">
+            <img src="{{ asset('img/itibariki/Shokudo.jpg') }}" alt="logo">
             {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
             <img src="img/foods/food3.jpg" width="240" height="180" alt="">
             <img src="img/foods/food4.jpg" width="240" height="180" alt="">
