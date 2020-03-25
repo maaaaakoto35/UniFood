@@ -10,17 +10,7 @@
 <body>
     <div class="wrapper">
 
-        <div class="top">
-            {{-- topページのリンク --}}
-            <div class="top-ink" style="float: right;">
-                <a href="{{ route('index') }}">TOPページ</a>
-            </div>
-
-            {{-- タイトル --}}
-            <div class="title">
-                <h1>Student Cafeteria</h1>
-            </div>
-        </div><br>
+        @include('header')<br>
 
         @if (isset($keyword))
             <div class="search">

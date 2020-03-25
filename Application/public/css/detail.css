@@ -1,0 +1,21 @@
+.wrapper {
+    margin: 0 auto;
+    flex-direction: column;
+}
+.store_title {
+    display: inline-block;
+}
+.rate {
+    display: inline-block;
+}
+.contents {
+    display: flex;
+    justify-content: center;
+}
+.slider {
+    display: inline-block;
+    padding-right: 5%;
+}
+.detail {
+    display: inline-block;
+}

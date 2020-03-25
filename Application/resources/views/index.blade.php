@@ -24,17 +24,8 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="top">
-            {{-- topページのリンク --}}
-            <div class="top-ink" style="float: right;">
-                <a href="{{ route('index') }}">TOPページ</a>
-            </div>
-
-            {{-- タイトル --}}
-            <div class="title">
-                <h1>Student Cafeteria</h1>
-            </div>
-        </div><br>
+        @include('header')
+        <br>
 
         <div class="main">
             {{-- $is_storeがTRUEの時は店舗検索、FALSEの時はメニュー検索をするようにgetSearchメソッドに飛ぶ --}}
