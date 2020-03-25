@@ -18,9 +18,9 @@ class StoresController extends Controller
             'ログイン',
         ];
         $is_store = true;
-        return view('index')->with('stores', $stores)
+        return view('/post/index')->with('stores', $stores)
                             ->with('side_list', $side_list)
-                            ->with('is_store', $is_store);
+                            ->with('is_store', /_$is_store);
     }
 
     // =========isStore=========
