@@ -19,4 +19,5 @@ Route::post('/search', 'StoresController@search');
 Route::get('/search', 'StoresController@search')->name('search');
 Route::get('/detail', 'DetailsController@index');
 Route::post('/detail', 'DetailsController@storeShow')->name('store_show');
-Route::get('/add_store', 'StoresController@add_store');
+Route::get('/post', 'PostsController@index')->name('post');
+Route::post('/post', 'PostsController@post');

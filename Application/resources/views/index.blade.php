@@ -32,13 +32,13 @@
             <div class="search">
                 <div class="search_button">
                     <form action="/" method="POST">
-                        {{ csrf_field() }}
+                        @csrf
                         <input type="hidden" name="id" value="1">
                         <input id="submit_button" type="submit" value="店舗検索" class="store_button">
                     </form>
 
                     <form action="/" method="POST">
-                        {{ csrf_field() }}
+                        @csrf
                         <input type="hidden" name="id" value="0">
                         <input id="submit_button" type="submit" value="メニュー" class="food_button">
                     </form>
@@ -48,7 +48,7 @@
                     @if (isset($is_store))
                         @if ($is_store == 1)
                             <form action="/search" method="POST">
-                                {{ csrf_field() }}
+                                @csrf
                                 <div class="form_text">
                                     <input type="text" name="store" size="60" placeholder="店舗検索" style="display: inline-block; height: 50px; font-size: large;"><br>
                                 </div>
@@ -56,7 +56,7 @@
                             </form>
                         @elseif($is_store == 0)
                             <form action="/search" method="POST">
-                                {{ csrf_field() }}
+                                @csrf
                                 <div class="form_text">
                                     <input type="text" name="menu" size="60" placeholder="メニュー検索" style="display: inline-block; height: 50px; font-size: large;"><br>
                                 </div>
@@ -65,7 +65,7 @@
                         @endif
                     @else
                         <form action="/search" method="POST">
-                            {{ csrf_field() }}
+                            @csrf
                             <div class="form_text">
                                 <input type="text" name="store" size="60" placeholder="店舗かメニューかを選択してください" style="display: inline-block; height: 50px; font-size: large;"><br>
                             </div>
@@ -102,6 +102,8 @@
                 @endforeach
             </div>
         </div>
+
+        <a href="/post">口コミ投稿</a>
 
         {{-- <div class="footer">
             @include('footer')
