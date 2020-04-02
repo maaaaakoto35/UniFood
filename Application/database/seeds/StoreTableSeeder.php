@@ -24,7 +24,7 @@ class StoreTableSeeder extends Seeder
             ],
             [
               'store_name' =>'itibariki',
-              'store_jname' => '壱馬力',
+              'store_jname' => 'らーめん壱馬力',
               'genre' => 'ラーメン/中華そば',
               'foods' => '18',
               'price' => '~1000円',

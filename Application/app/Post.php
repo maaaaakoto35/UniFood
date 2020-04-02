@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use PhpParser\Node\Expr\Cast\String_;
 
 class Post extends Model
 {

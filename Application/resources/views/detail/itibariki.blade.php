@@ -62,7 +62,11 @@
         </div>
 
         <div class="review">
-            <h1>口コミの表示</h1>
+            <h2>{{$result["store_jname"]}}の口コミ</h2>
+            @foreach ($posts as $post)
+                <p>{{$post["title"]}}</p>
+                <p>{{$post["contents"]}}</p>
+            @endforeach
         </div>
     </div>
 </body>

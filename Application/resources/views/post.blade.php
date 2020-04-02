@@ -14,8 +14,18 @@
             @csrf
             <div class="top">
                 <h2>口コミ</h2>
-                <input type="text" name="store_name" size="20" placeholder="店舗名を記入してください">
-                <input type="text" name="store_jname" size="20" placeholder="店舗名を記入してください">
+                <select name="id" size="1">
+                    <option value="1">はんなり食堂</option>
+                    <option value="2">らーめん壱馬力</option>
+                    <option value="3">BABY FACE PLANET'S</option>
+                    <option value="4">cosmic bakery cafe</option>
+                    <option value="5">MIYAKO製麺</option>
+                    <option value="6">ふじカツ</option>
+                    <option value="7">むすびキッチン</option>
+                    <option value="8">LIBRE（リブレ）</option>
+                    <option value="9">ラウンジふるさと</option>
+                    <option value="10">FamilyMart</option>
+                </select>
             </div>
 
             <div class="body">

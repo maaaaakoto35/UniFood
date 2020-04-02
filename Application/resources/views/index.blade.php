@@ -98,12 +98,14 @@
             {{-- サイドバー --}}
             <div class="side">
                 @foreach ($side_list as $key => $side)
-                    <p><a href="">{{$side}}</a></p>
+                    @if ($key == 3)
+                        <a href="/post">{{$side}}</a>
+                    @else
+                        <p><a href="">{{$side}}</a></p>
+                    @endif
                 @endforeach
             </div>
         </div>
-
-        <a href="/post">口コミ投稿</a>
 
         {{-- <div class="footer">
             @include('footer')

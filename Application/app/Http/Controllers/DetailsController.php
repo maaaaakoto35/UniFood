@@ -5,25 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Store;
 use App\Menu;
+use App\Post;
 
 class DetailsController extends Controller
 {
     // =========index=========
     public function index (Request $request){
         if($storeName = $request->input('value')) {
-            $query = Store::query();
-            $query->where('store_name', '=', $storeName);
-            $result = $query->first();
-
-            $query2 = Menu::query();
-            $query2->where('store_name', '=', $storeName);
-            $menus = $query2->get();
+            $result = Post::where('store_name', $storeName)->first();
+            $menus = Menu::where('store_name', $storeName)->get();
+            $posts = Post::where('store_name', $storeName)->get();
 
             $view = 'detail/'.$storeName;
             // var_dump($result['id']);
 
             return view($view)->with('result', $result)
-                              ->with('menus', $menus);
+                              ->with('posts',  $posts)
+                              ->with('menus',  $menus);
         } else {
             return view('index');
         }

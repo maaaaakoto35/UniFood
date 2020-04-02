@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <p>done!</p>
+    <div class="wrapper">
+        @include('header')
+        <div class="contents" style="text-align: center;">
+            口コミ投稿に成功しました、ありがとうございます！！！
+        </div>
+
+        <div class="link">
+            <a href="{{ route('index') }}">TOPページに戻る</a>
+        </div>
+    </div>
 </body>
 </html>
