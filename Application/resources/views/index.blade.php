@@ -99,9 +99,11 @@
             <div class="side">
                 @foreach ($side_list as $key => $side)
                     @if ($key == 3)
-                        <a href="/post">{{$side}}</a>
+                        <p><a href="/link?key=3">{{$side}}</a></p>
+                    @elseif ($key == 0)
+                        <p><a href="/link?key=0">{{$side}}</a></p>
                     @else
-                        <p><a href="">{{$side}}</a></p>
+                        <p><a href="/link">{{$side}}</a></p>
                     @endif
                 @endforeach
             </div>

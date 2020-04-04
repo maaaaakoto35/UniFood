@@ -8,6 +8,6 @@
 
     {{-- タイトル --}}
     <div class="title">
-        <h1>Student Cafeteria</h1>
+        <h1>   　Student Cafeteria</h1>
     </div>
 </div>

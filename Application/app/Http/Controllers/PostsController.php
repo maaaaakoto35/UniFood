@@ -21,7 +21,6 @@ class PostsController extends Controller
             $contents   = $request->input('contents');
             $rate       = (int)$request->input('rate');
             $query      = Store::where('id', $id)->first();
-            var_dump($id);
             $storeName  = $query->store_name;
             $storeJName = $query->store_jname;
 
