@@ -79,7 +79,6 @@
                                 <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
                                 <p style="display: inline-block">{{$value['detail']}}/</p>
                                 <p style="display: inline-block">{{$value['foods']}}品</p><br>
-                                <h2>{{$value['rate']}}</h2>
                             </div>
                             <div class="detail2">
                                 <img src="img/{{$value['store_name']}}/Shokudo.jpg" width="240" height="180" alt="" style="display: inline-block">

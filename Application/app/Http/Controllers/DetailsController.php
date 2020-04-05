@@ -12,12 +12,11 @@ class DetailsController extends Controller
     // =========index=========
     public function index (Request $request){
         if($storeName = $request->input('value')) {
-            $result = Post::where('store_name', $storeName)->first();
+            $result = Store::where('store_name', $storeName)->first();
             $menus = Menu::where('store_name', $storeName)->get();
             $posts = Post::where('store_name', $storeName)->get();
 
             $view = 'detail/'.$storeName;
-            // var_dump($result['id']);
 
             return view($view)->with('result', $result)
                               ->with('posts',  $posts)
@@ -34,7 +33,6 @@ class DetailsController extends Controller
             $query->where('store_name', '=', $storeName);
             $result = $query->first();
             $view = 'detail/'.$storeName;
-            // var_dump($result['id']);
 
             return view($view)->with('result', $result);
         } else {

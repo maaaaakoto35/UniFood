@@ -16,7 +16,7 @@
             <div class="form_top">
                 <h2 style="text-align:center">口コミの投稿</h2>
                 <div class="form_title">
-                    <input class="ef" type="text" placeholder="">
+                    <input class="ef" type="text" placeholder="" name="title">
                     <label>タイトル</label>
                     <span class="focus_line"></span>
                 </div>

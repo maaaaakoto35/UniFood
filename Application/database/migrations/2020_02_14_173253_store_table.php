@@ -23,6 +23,7 @@ class StoreTable extends Migration
             $table->string('price'); //価格帯
             $table->string('open_time'); //営業時間
             $table->string('place'); //何号館？
+            $table->double('rate', 3, 2)->nullable(); //評価
             $table->timestamps();
         });
     }

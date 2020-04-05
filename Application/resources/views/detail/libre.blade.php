@@ -17,7 +17,11 @@
             </div>
 
             <div class="rate">
-                <p>rate: {{$result["rate"]}}</p>
+                @if ($result["rate"])
+                    <p>rate : {{$result["rate"]}}</p>
+                @else
+                    <p>rate : まだ口コミがありません</p>
+                @endif
             </div>
         </div>
 

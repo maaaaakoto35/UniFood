@@ -50,7 +50,7 @@ class StoreTableSeeder extends Seeder
               'place' => '並楽館2階',
             ],
             [
-              'store_name' =>'miyko',
+              'store_name' =>'miyako',
               'store_jname' => 'MIYAKO製麺',
               'genre' => 'うどん/丼',
               'foods' => '38',
