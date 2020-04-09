@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Store;
-use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -15,27 +13,41 @@ class PostsController extends Controller
         return view('post')->with('result', $result);
     }
 
+    /**
+     * 口コミ投稿画面
+     */
     public function post (Request $request) {
         if (isset($request)) {
-            $id         = $request->input('id');
-            $title      = $request->input('title');
-            $contents   = $request->input('contents');
-            $rate       = (int)$request->input('rate');
-            $query      = Store::where('id', $id)->first();
-            $storeName  = $query->store_name;
-            $storeJName = $query->store_jname;
+            $formInfo = array();
+            $formInfo['id']         = $request->input('id');
+            $formInfo['title']      = $request->input('title');
+            $formInfo['contents']   = $request->input('contents');
+            $formInfo['rate']       = (int)$request->input('rate');
+            $query                  = Store::where('id', $formInfo['id'])->first();
+            $formInfo['storeName']  = $query->store_name;
+            $formInfo['storeJName'] = $query->store_jname;
 
-            if (isset($storeName)) {
+            return view('post_confirm')->with($formInfo);
+        }
+        return view('not_post');
+    }
+
+    /**
+     * 口コミ投稿確認画面
+     */
+    public function postConfirm (Request $confirm, Request $formInfo) {
+        if (isset($formInfo)) {
+            if (isset($confirm)) {
                 DB::beginTransaction();
                 try {
-                    self::createPost($title, $storeName, $storeJName, $contents, $rate);
-                    self::updateRate($id);
+                    self::createPost($formInfo['title'], $formInfo['storeName'], $formInfo['storeJName'], $formInfo['contents'], $formInfo['rate']);
+                    self::updateRate($formInfo['id']);
                     DB::commit();
                     return view('done_post');
                 } catch (\Exception $e) {
                     DB::rollback();
                 }
-            }
+            } else return view('post_confirm')->with($formInfo);
         }
         return view('not_post');
     }
@@ -45,7 +57,6 @@ class PostsController extends Controller
      * 口コミ投稿処理
      *
      * @param query
-     * @return bool
      *
      */
     public function createPost($title, $storeName, $storeJName, $contents, $rate) {
@@ -62,8 +73,7 @@ class PostsController extends Controller
     /**
      * 店舗評価処理
      *
-     * @param query
-     * @return bool
+     * @param int
      *
      */
     public function updateRate($id) {
@@ -75,7 +85,6 @@ class PostsController extends Controller
         foreach ($posts as $key => $post) {
             $rates += $post['rate'];
         }
-        var_dump($rates);
         $rate = $rates / count($posts);
         $store = Store::where('id', $id)->first();
         $store->rate = $rate;

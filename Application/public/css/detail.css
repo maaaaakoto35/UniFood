@@ -1,5 +1,5 @@
 .wrapper {
-    margin: 0 auto;
+    margin: 0% 20% 0% 20%;
     flex-direction: column;
 }
 .store_title {
@@ -8,16 +8,21 @@
 .rate {
     display: inline-block;
 }
-.contents {
+/* .contents {
     /* display: flex;
-    justify-content: center; */
-}
+    justify-content: center;
+}*/
 .slider {
     display: inline-block;
     padding-right: 3%;
     vertical-align: top;
+    width: 40%;
 }
 .detail {
     display: inline-block;
     vertical-align: top;
+    width: 50%;
+}
+.review {
+    text-align: center;
 }
