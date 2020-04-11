@@ -9,8 +9,7 @@ use App\Store;
 class PostsController extends Controller
 {
     public function index () {
-        $result = Post::latest()->get();
-        return view('post')->with('result', $result);
+        return view('post');
     }
 
     /**
@@ -27,7 +26,10 @@ class PostsController extends Controller
             $formInfo['storeName']  = $query->store_name;
             $formInfo['storeJName'] = $query->store_jname;
 
-            return view('post_confirm')->with($formInfo);
+            session()->put('form_info[]', $formInfo);
+            session()->put('message', 'この口コミを投稿しますか？');
+
+            return view('post_confirm')->with('form_info', $formInfo);
         }
         return view('not_post');
     }
@@ -35,19 +37,33 @@ class PostsController extends Controller
     /**
      * 口コミ投稿確認画面
      */
-    public function postConfirm (Request $confirm, Request $formInfo) {
+    public function postConfirm (Request $request) {
+        $formInfo = $request->input('form_info');
+        $confirm  = $request->input('confirm');
+        $keys     = array();
+
+
         if (isset($formInfo)) {
             if (isset($confirm)) {
                 DB::beginTransaction();
                 try {
-                    self::createPost($formInfo['title'], $formInfo['storeName'], $formInfo['storeJName'], $formInfo['contents'], $formInfo['rate']);
-                    self::updateRate($formInfo['id']);
+                    $index = 0;
+                    foreach ($formInfo as $key => $value) {
+                        $keys[$index] = $key;
+                        $index++;
+                    }
+                    self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]]);
+                    self::updateRate($formInfo[$keys[0]]);
                     DB::commit();
+                    $request->session()->forget('form_info');
+                    $request->session()->regenerateToken();
                     return view('done_post');
                 } catch (\Exception $e) {
                     DB::rollback();
                 }
-            } else return view('post_confirm')->with($formInfo);
+            } else {
+                return view('post_confirm')->with('form_info', $formInfo);
+            }
         }
         return view('not_post');
     }
@@ -60,6 +76,7 @@ class PostsController extends Controller
      *
      */
     public function createPost($title, $storeName, $storeJName, $contents, $rate) {
+        $rate = (int) $rate;
         $instance = new Post;
         $instance->create([
             'title'         => $title,
@@ -85,7 +102,11 @@ class PostsController extends Controller
         foreach ($posts as $key => $post) {
             $rates += $post['rate'];
         }
-        $rate = $rates / count($posts);
+        $denominator = 1;
+        if (count($posts) != NULL) {
+            $denominator = count($posts);
+        }
+        $rate = $rates / $denominator;
         $store = Store::where('id', $id)->first();
         $store->rate = $rate;
         $store->save();

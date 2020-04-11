@@ -22,5 +22,5 @@ Route::get('/detail', 'DetailsController@index');
 Route::post('/detail', 'DetailsController@storeShow')->name('store_show');
 Route::get('/post', 'PostsController@index')->name('post');
 Route::post('/post', 'PostsController@post');
-Route::get('/post', 'PostsController@postConfirm')->name('post_confirm');
-Route::post('/post', 'PostsController@postConfirm');
+Route::get('/post_confirm', 'PostsController@postConfirm')->name('post_confirm');
+Route::post('/post_confirm', 'PostsController@postConfirm');

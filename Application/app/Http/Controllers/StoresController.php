@@ -29,10 +29,9 @@ class StoresController extends Controller
         $stores = Store::latest()->get();
         $sideList = [
             'UniFoodとは?',
-            '学内マップ',
-            '口コミ投稿',
             '無料会員登録',
             'ログイン',
+            '口コミ投稿',
         ];
 
         $isStore = $request->input('id');
