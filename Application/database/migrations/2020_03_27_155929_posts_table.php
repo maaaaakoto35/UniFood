@@ -21,6 +21,8 @@ class PostsTable extends Migration
             $table->string('store_jname'); //店名(ja)
             $table->string('contents'); //本文
             $table->integer('rate'); //本文
+            $table->string('img_name', 40)->nullable(); //画像ファイルのファイル名
+            $table->string('img_path', 40)->nullable(); //画像ファイルのファイル名
             $table->timestamps();
         });
     }

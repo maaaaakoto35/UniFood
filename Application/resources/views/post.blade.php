@@ -11,7 +11,7 @@
     <div class="wrapper">
         @include('header')<br>
 
-        <form action="/post" method="POST">
+        <form action="/post" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form_top">
                 <h2 style="text-align:center">口コミの投稿</h2>
@@ -32,6 +32,7 @@
                     <option value="9">ラウンジふるさと</option>
                     <option value="10">FamilyMart</option>
                 </select>
+                <input type="file" name="image" class="form-control">
             </div>
 
             <div class="body">
