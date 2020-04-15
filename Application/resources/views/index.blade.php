@@ -50,7 +50,7 @@
                             <form action="/search" method="POST">
                                 @csrf
                                 <div class="form_text">
-                                    <input type="text" name="store" size="60" placeholder="店舗検索" style="display: inline-block; height: 50px; font-size: large;"><br>
+                                    <input type="text" name="store" class="input_text" size="60" placeholder="店舗検索"><br>
                                 </div>
                                 <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
@@ -58,7 +58,7 @@
                             <form action="/search" method="POST">
                                 @csrf
                                 <div class="form_text">
-                                    <input type="text" name="menu" size="60" placeholder="メニュー検索" style="display: inline-block; height: 50px; font-size: large;"><br>
+                                    <input type="text" name="menu" class="input_text" size="60" placeholder="メニュー検索"><br>
                                 </div>
                                 <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
@@ -67,7 +67,7 @@
                         <form action="/search" method="POST">
                             @csrf
                             <div class="form_text">
-                                <input type="text" name="store" size="60" placeholder="店舗かメニューかを選択してください" style="display: inline-block; height: 50px; font-size: large;"><br>
+                                <input type="text" name="store" class="input_text" size="60" placeholder="店舗かメニューかを選択してください"><br>
                             </div>
                             <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                         </form>
