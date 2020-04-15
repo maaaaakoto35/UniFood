@@ -18,7 +18,7 @@ class MenusTable extends Migration
             $table->string('food_name', 40);
             $table->string('store_name', 30);
             $table->string('store_jname', 30);
-            $table->integer('price');
+            $table->string('price', 100);
             $table->timestamps();
         });
     }
