@@ -1,97 +1,133 @@
-.wrapper {
-  margin: 0% 10% 0% 10%;
-  flex-direction: column;
+@media screen and (min-width:961px) {
+  /*pc用のcssを記述*/
+  .wrapper {
+    margin: 0% 20% 0% 20%;
+    flex-direction: column;
+  }
+  .main {
+    text-align: center;
+  }
+  .search {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+  }
+  .search_button {
+    display: inline-block;
+  }
+  .search_form {
+    display: inline-block;
+  }
+  .input_text {
+    display: inline-block;
+    height: 50px;
+    font-size: large;
+  }
+  .submit_button {
+    position: relative;
+    width: 58px;
+    height: 35px;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+    padding: 0.3em 0.5em;
+    background: #00bcd4;
+    border-top: solid 3px #00a3d4;
+    border-bottom: solid 3px #00a3d4;
+    transition: .4s;
+  }
+  .submit_button:hover {
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+  .store_button {
+    position: relative;
+    height: 29px;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+    padding: 0.3em 0.5em;
+    background: #00bcd4;
+    border-top: solid 3px #00a3d4;
+    border-bottom: solid 3px #00a3d4;
+    transition: .4s;
+  }
+  .store_button:hover {
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+  .food_button {
+    position: relative;
+    height: 29px;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+    padding: 0.3em 0.5em;
+    background: #00bcd4;
+    border-top: solid 3px #00a3d4;
+    border-bottom: solid 3px #00a3d4;
+    transition: .4s;
+  }
+  .food_button:hover {
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+  .form_text {
+    display: inline-block;
+    height: 38px;
+  }
+  .form_button {
+    display: inline-block;
+    height: auto;
+  }
+  .side {
+    width: 18%;
+    float: right;
+  }
+  .footer {
+    margin-top: auto;
+    border:  solid 1px;
+    height:60px;
+  }
 }
-.main {
-  text-align: center;
-}
-.search {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 70px;
-}
-.search_button {
-  display: inline-block;
-}
-.search_form {
-  display: inline-block;
-}
-.submit_button {
-  position: relative;
-  width: 58px;
-  height: 35px;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.3em 0.5em;
-  background: #00bcd4;
-  border-top: solid 3px #00a3d4;
-  border-bottom: solid 3px #00a3d4;
-  transition: .4s;
-}
-.submit_button:hover {
-  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
-               6px 0px 15px rgba(255, 255, 240, 0.83);
-}
-.store_button {
-  position: relative;
-  height: 29px;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.3em 0.5em;
-  background: #00bcd4;
-  border-top: solid 3px #00a3d4;
-  border-bottom: solid 3px #00a3d4;
-  transition: .4s;
-}
-.store_button:hover {
-  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
-               6px 0px 15px rgba(255, 255, 240, 0.83);
-}
-.food_button {
-  position: relative;
-  height: 29px;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.3em 0.5em;
-  background: #00bcd4;
-  border-top: solid 3px #00a3d4;
-  border-bottom: solid 3px #00a3d4;
-  transition: .4s;
-}
-.food_button:hover {
-  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
-               6px 0px 15px rgba(255, 255, 240, 0.83);
-}
-.search_form {
-  display: inline-block;
-  height: auto;
-}
-.form_text {
-  display: inline-block;
-  height: 38px;
-}
-.form_button {
-  display: inline-block;
-  height: auto;
-}
-
-.side {
-  width: 18%;
-  float: right;
-}
-.footer {
-  margin-top: auto;
-  border:  solid 1px;
-  height:60px;
+@media screen and (max-width:375px) {
+  /*スマホ用のcssを記述*/
+  .wrapper {
+    margin: auto;
+  }
+  .search {
+    display: block;
+  }
+  .search_button {
+    width: 15%;
+    display: inline-block;
+  }
+  .search_form {
+    width: 70%;
+    display: inline-block;
+  }
+  .form_text {
+    display: inline-block;
+  }
+  .input_text {
+    display: inline-block;
+    width: 60%;
+  }
+  .input_button {
+    display: inline-block;
+  }
+  .slider {
+    display: block;
+  }
+  .side {
+    display: none;
+  }
 }
