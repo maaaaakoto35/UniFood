@@ -1,4 +1,4 @@
-@media screen and (min-width:961px) {
+@media screen and (min-width:501px) {
   /*pc用のcssを記述*/
   .top {
     height: 200px;
@@ -19,7 +19,7 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 }
-@media screen and (max-width:375px) {
+@media screen and (max-width:500px) {
   /*スマホ用のcssを記述*/
   .top {
     height: 110px;
@@ -32,10 +32,10 @@
   }
   .title {
     display: inline-block;
-    width: 400px;
+    width: max-content;
     position: absolute;          /* 位置指定 */
     top: 60px;                    /* 親要素の半分下にずらす */
-    left: 60%;                   /* 親要素の半分右にずらす */
+    left: 48%;                   /* 親要素の半分右にずらす */
     transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
     font-family: Arial, Helvetica, sans-serif;
   }

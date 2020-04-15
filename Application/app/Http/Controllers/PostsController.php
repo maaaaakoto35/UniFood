@@ -138,9 +138,9 @@ class PostsController extends Controller
         $id       = ProvisionalImage::latest()->orderBy('id', 'desc')->first()->id;
         $file     = array();
         if ($id == true) {
-            $file['name'] = (int)$id+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpngになる
+            $file['name'] = (int)$id+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         } else {
-            $file['name'] = 1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpngになる
+            $file['name'] = 1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         }
         $file['path'] = 'storage/img/posts/';
 
@@ -150,7 +150,7 @@ class PostsController extends Controller
             'path'         => $file['path'],
         ]);
 
-        $image->storeAs($file['path'], $file['name']);
+        $image->storeAs('public/img/posts', $file['name']);
         var_dump($image);
 
         return $file;
