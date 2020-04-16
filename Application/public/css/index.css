@@ -187,5 +187,7 @@
   }
   .side_list {
     display: inline-block;
+    font-size: small;
+    padding: 0% 0% 0% 5%;
   }
 }
