@@ -1,28 +1,37 @@
-.wrapper {
-    margin: 0% 10% 0% 10%;
-    flex-direction: column;
+@media screen and (min-width:501px) {
+    /*pc用のcssを記述*/
+    .wrapper {
+        margin: 0% 10% 0% 10%;
+        flex-direction: column;
+    }
+    .store_title {
+        display: inline-block;
+    }
+    .rate {
+        display: inline-block;
+    }
+    /* .contents {
+        /* display: flex;
+        justify-content: center;
+    }*/
+    .slider {
+        display: inline-block;
+        padding-right: 3%;
+        vertical-align: top;
+        width: 40%;
+    }
+    .detail {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
+    .review {
+        text-align: center;
+    }
 }
-.store_title {
-    display: inline-block;
-}
-.rate {
-    display: inline-block;
-}
-/* .contents {
-    /* display: flex;
-    justify-content: center;
-}*/
-.slider {
-    display: inline-block;
-    padding-right: 3%;
-    vertical-align: top;
-    width: 40%;
-}
-.detail {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-}
-.review {
-    text-align: center;
+@media screen and (max-width:500px) {
+    /*スマホ用のcssを記述*/
+    .wrapper {
+        overflow: hidden;
+    }
 }
