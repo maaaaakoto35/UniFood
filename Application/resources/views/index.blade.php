@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Cafeteria</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.bxslider.js') }}"></script>
 
     <script type="text/javascript">
             $(document).ready(function(){
@@ -47,29 +47,29 @@
                 <div class="search_form">
                     @if (isset($is_store))
                         @if ($is_store == 1)
-                            <form action="/search" method="POST">
+                            <form action="{{route('search')}}" method="POST">
                                 @csrf
                                 <div class="form_text">
                                     <input type="text" name="store" class="input_text" size="60" placeholder="店舗検索"><br>
                                 </div>
-                                <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
                         @elseif($is_store == 0)
-                            <form action="/search" method="POST">
+                            <form action="{{route('search')}}" method="POST">
                                 @csrf
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" placeholder="メニュー検索"><br>
                                 </div>
-                                <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
                         @endif
                     @else
-                        <form action="/search" method="POST">
+                        <form action="{{route('search')}}" method="POST">
                             @csrf
                             <div class="form_text">
                                 <input type="text" name="store" class="input_text" size="60" placeholder="店舗かメニューかを選択してください"><br>
                             </div>
-                            <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                            <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                         </form>
                     @endif
                 </div>
