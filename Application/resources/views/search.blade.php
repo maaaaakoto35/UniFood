@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Cafeteria</title>
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}">
 </head>
 <body>
     <div class="wrapper">
@@ -32,7 +32,7 @@
                     @if (isset($button))
                     <div class="search_form">
                         @if ($button == 1)
-                            <form action="/search" method="POST">
+                            <form action="{{route('search')}}" method="POST">
                                 @csrf
                                 <div class="form_text">
                                     <input type="text" name="store" class="input_text" size="60" value="{{$keyword}}"><br>
@@ -40,7 +40,7 @@
                                 <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
                             </form>
                         @elseif($button == 0)
-                            <form action="/search" method="POST" style="display: inline-block;">
+                            <form action="{{route('search')}}" method="POST" style="display: inline-block;">
                                 @csrf
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" value="{{$keyword}}"><br>
@@ -49,7 +49,7 @@
                             </form>
                         @endif
                     @else
-                        <form action="/search" method="POST">
+                        <form action="{{route('search')}}" method="POST">
                             @csrf
                             <div class="form_text">
                                 <input type="text" name="{{$button}}" class="input_text" size="60" value="{{$keyword}}"><br>
@@ -71,7 +71,7 @@
                 <div class="result">
                     @if ($button == 1)
                         @foreach ($result as $key => $value)
-                            <a href="/detail/?value={{$value['store_name']}}">
+                            <a href="{{route('/detail/?value='.$value['store_name'])}}">
                                 <div class="detail">
                                     <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
                                     <p style="display: inline-block">{{$value['detail']}}/</p>
@@ -85,7 +85,7 @@
                         @endforeach
                     @elseif ($button == 0)
                         @foreach ($result as $key => $value)
-                            <a href="/detail/?value={{$value['store_name']}}">
+                            <a href="{{route('/detail/?value='.$value['store_name'])}}">
                                 <div class="detail">
                                     <h2 style="display: inline-block">{{$value['food_name']}}</h2>
                                     <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
