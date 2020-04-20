@@ -71,7 +71,7 @@
                 <div class="result">
                     @if ($button == 1)
                         @foreach ($result as $key => $value)
-                            <a href="{{route('/detail/?value='.$value['store_name'])}}">
+                            <a href="/detail/?value={{$value['store_name']}}">
                                 <div class="detail">
                                     <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
                                     <p style="display: inline-block">{{$value['detail']}}/</p>
@@ -85,7 +85,7 @@
                         @endforeach
                     @elseif ($button == 0)
                         @foreach ($result as $key => $value)
-                            <a href="{{route('/detail/?value='.$value['store_name'])}}">
+                            <a href="/detail/?value={{$value['store_name']}}">
                                 <div class="detail">
                                     <h2 style="display: inline-block">{{$value['food_name']}}</h2>
                                     <h2 style="display: inline-block">{{$value['store_jname']}}</h2>
