@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.bxSlider.js') }}"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
 
     <script type="text/javascript">
             $(document).ready(function(){
