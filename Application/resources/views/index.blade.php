@@ -47,15 +47,15 @@
                 <div class="search_form">
                     @if (isset($is_store))
                         @if ($is_store == 1)
-                            <form action="{{route('search')}}" method="POST">
+                            <form action="/search" method="POST">
                                 @csrf
                                 <div class="form_text">
                                     <input type="text" name="store" class="input_text" size="60" placeholder="店舗検索"><br>
                                 </div>
-                                <input id="submit_button" type="submit"" value="検索" class="submit_button">
+                                <input id="submit_button" type="submit" value="検索" class="submit_button">
                             </form>
                         @elseif($is_store == 0)
-                            <form action="{{route('search')}}" method="POST">
+                            <form action="/search" method="POST">
                                 @csrf
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" placeholder="メニュー検索"><br>
@@ -64,12 +64,12 @@
                             </form>
                         @endif
                     @else
-                        <form action="{{route('search')}}" method="POST">
+                        <form action="/search" method="POST">
                             @csrf
                             <div class="form_text">
                                 <input type="text" name="store" class="input_text" size="60" placeholder="店舗かメニューかを選択してください"><br>
                             </div>
-                            <input id="submit_button" type="submit"" value="検索" class="submit_button">
+                            <input id="submit_button" type="submit" value="検索" class="submit_button">
                         </form>
                     @endif
                 </div>
