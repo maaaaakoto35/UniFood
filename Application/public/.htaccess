@@ -4,7 +4,7 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteBase /
+    RewriteBase ^ ./views/
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
