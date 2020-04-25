@@ -19,11 +19,10 @@ Route::post('/search', 'StoresController@search');
 Route::get('/search', 'StoresController@search')->name('search');
 Route::get('/detail', 'DetailsController@index');
 Route::post('/detail', 'DetailsController@storeShow')->name('store_show');
-Route::get('/post', 'PostsController@index')->name('post');
 Route::post('/post', 'PostsController@post');
 Route::get('/post_confirm', 'PostsController@postConfirm')->name('post_confirm');
 Route::post('/post_confirm', 'PostsController@postConfirm');
 
-Route::view('/link?key=3', 'post');
-Route::view('/link?key=0', 'philosophy');
-Route::view('/link', 'not_found');
+Route::view('/post', 'post')->name('post');
+Route::view('/philosophy', 'philosophy')->name('philosophy');
+Route::view('/not_found', 'not_found')->name('not_found');
