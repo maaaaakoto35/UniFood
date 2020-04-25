@@ -74,19 +74,6 @@ error_log("!!!!!!!!!!!!!!");
         }
     }
 
-    // =========link=========
-    public function link(Request $request, $key = NULL){
-        if (isset($key)) {
-            if ($key == 0) {
-                return view('philosophy');
-            } elseif ($key == 3) {
-                return redirect('post');
-            }
-        } else {
-            return view('not_found');
-        }
-    }
-
     // =========add_store=========
     public function add_store(Request $store_list){
         $store = new Store;
