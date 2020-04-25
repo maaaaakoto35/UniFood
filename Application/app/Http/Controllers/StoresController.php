@@ -75,8 +75,8 @@ error_log("!!!!!!!!!!!!!!");
     }
 
     // =========link=========
-    public function link(Request $request){
-        if ($key = $request->input('key')) {
+    public function link(Request $request, $key = NULL){
+        if (isset($key)) {
             if ($key == 0) {
                 return view('philosophy');
             } elseif ($key == 3) {
