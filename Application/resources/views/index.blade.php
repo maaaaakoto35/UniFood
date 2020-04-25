@@ -60,7 +60,7 @@
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" placeholder="メニュー検索"><br>
                                 </div>
-                                <input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <input id="submit_button" type="submit" value="検索" class="submit_button"></a>
                             </form>
                         @endif
                     @else
@@ -99,11 +99,11 @@
             <div class="side">
                 @foreach ($side_list as $key => $side)
                     @if ($key == 3)
-                    <div class="side_list"><a href="/link?key=3">{{$side}}</a></div>
+                        <div class="side_list"><a href="{{ route('post') }}">{{$side}}</a></div>
                     @elseif ($key == 0)
-                        <div class="side_list"><a href="/link?key=0">{{$side}}</a></div>
+                        <div class="side_list"><a href="{{ route('philosophy') }}">{{$side}}</a></div>
                     @else
-                        <div class="side_list"><a href="/link">{{$side}}</a></div>
+                        <div class="side_list"><a href="{{ route('not_found') }}">{{$side}}</a></div>
                     @endif
                 @endforeach
             </div>
