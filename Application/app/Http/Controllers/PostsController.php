@@ -151,7 +151,6 @@ class PostsController extends Controller
         ]);
 
         $image->storeAs('public/img/posts', $file['name']);
-        var_dump($image);
 
         return $file;
     }
