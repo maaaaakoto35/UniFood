@@ -110,7 +110,7 @@
     }
     .search_button {
         width: 15%;
-        padding: 0% 0% 0% 12%;
+        padding: 0% 2.5% 0% 12%;
         display: inline-block;
     }
     .store_button {
@@ -166,6 +166,9 @@
         width: 100%;
         font-size: large;
         height: 52px;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        -webkit-box-sizing:border-box; /* Chrome, Safari */
     }
     .submit_button {
         position: relative;
