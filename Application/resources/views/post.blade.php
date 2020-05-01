@@ -55,7 +55,7 @@
                     <label for="star4"><span class="text">悪い</span>★</label>
                     <input id="star5" type="radio" name="rate" value="1" />
                     <label for="star5"><span class="text">最悪</span>★</label>
-                </div>
+                </div><br><br>
                 <input type="submit" value="送信" class="submit_button">
             </div>
         </form>
