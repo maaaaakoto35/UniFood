@@ -21,7 +21,7 @@
                     <div class="star-rating-front" style="display: inline-block; width: {{$star}}%">★★★★★</div>
                     <div class="star-rating-back" style="display: inline-block;">★★★★★</div> : {{$result["rate"]}}
                 @else
-                    <div class="star-rating-back display: inline-block;">★★★★★</div> : まだ口コミがありません
+                    <div class="star-rating-back" style="display: inline-block;">★★★★★</div> : まだ口コミがありません
                 @endif
             </div>
         </div>
