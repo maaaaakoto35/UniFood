@@ -23,7 +23,7 @@
                 </div> : {{$result["rate"]}}
             @else
                 <div class="rate">
-                    <div class="star-rating-back display: inline-block;">★★★★★</div> : まだ口コミがありません
+                    <div class="star-rating-back" style="display: inline-block;">★★★★★</div> : まだ口コミがありません
                 </div>
             @endif
         </div>
