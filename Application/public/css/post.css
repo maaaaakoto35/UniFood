@@ -136,6 +136,7 @@
 	}
 	.rate{
 		display: flex;
+		width: 100%;
 		position: relative;
 		overflow: hidden;
 		flex-direction: row-reverse;

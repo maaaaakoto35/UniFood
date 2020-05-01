@@ -13,13 +13,20 @@ class DetailsController extends Controller
     public function index (Request $request){
         if($storeName = $request->input('value')) {
             $result = Store::where('store_name', $storeName)->first();
-            $menus = Menu::where('store_name', $storeName)->get();
-            $posts = Post::where('store_name', $storeName)->get();
+            $menus  = Menu::where('store_name', $storeName)->get();
+            $posts  = Post::where('store_name', $storeName)->get();
+            $star   = NULL;
 
             $view = 'detail/'.$storeName;
 
+            //rateを百分率に変換
+            if (isset($result["rate"])) {
+                $star = $result["rate"] * 20;
+            }
+
             return view($view)->with('result', $result)
                               ->with('posts',  $posts)
+                              ->with('star',  $star)
                               ->with('menus',  $menus);
         } else {
             return view('index');

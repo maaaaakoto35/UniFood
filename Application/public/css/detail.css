@@ -9,6 +9,17 @@
     }
     .rate {
         display: inline-block;
+        position: relative;
+    }
+    .star-rating-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #ffcc33;
+    }
+    .star-rating-back {
+        color: #ccc;
     }
     /* .contents {
         /* display: flex;
@@ -33,5 +44,19 @@
     /*スマホ用のcssを記述*/
     .wrapper {
         overflow: hidden;
+    }
+    .rate {
+        display: inline-block;
+        position: relative;
+    }
+    .star-rating-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #ffcc33;
+    }
+    .star-rating-back {
+        color: #ccc;
     }
 }
