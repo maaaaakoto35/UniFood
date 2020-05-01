@@ -32,7 +32,9 @@
                     <option value="9">ラウンジふるさと</option>
                     <option value="10">FamilyMart</option>
                 </select>
-                <input type="file" name="image" class="form-control">
+                <div style="text-align: center">
+                    <input type="file" name="image" class="form-control">
+                </div>
             </div>
 
             <div class="body">

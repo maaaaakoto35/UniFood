@@ -17,10 +17,11 @@
             </div>
 
             <div class="rate">
-                @if ($result["rate"])
-                    <p>rate : {{$result["rate"]}}</p>
+                @if ($star)
+                <div class="star-rating-front" style="width: {{$star}}%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div> : {{$result["rate"]}}
                 @else
-                    <p>rate : まだ口コミがありません</p>
+                    <div class="star-rating-back">★★★★★</div> : まだ口コミがありません
                 @endif
             </div>
         </div>
