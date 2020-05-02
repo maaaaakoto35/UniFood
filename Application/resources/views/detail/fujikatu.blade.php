@@ -16,13 +16,16 @@
                 <h1>{{$result["store_jname"]}}</h1>
             </div>
 
-            <div class="rate">
-                @if ($result["rate"])
-                    <p>rate : {{$result["rate"]}}</p>
-                @else
-                    <p>rate : まだ口コミがありません</p>
-                @endif
-            </div>
+            @if ($star)
+                <div class="rate">
+                    <div class="star-rating-front" style="display: inline-block; width: {{$star}}%">★★★★★</div>
+                    <div class="star-rating-back" style="display: inline-block;">★★★★★</div>
+                </div> : {{$result["rate"]}}
+            @else
+                <div class="rate">
+                    <div class="star-rating-back" style="display: inline-block;">★★★★★</div> : まだ口コミがありません
+                </div>
+            @endif
         </div>
 
         <div class="contents">

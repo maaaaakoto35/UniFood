@@ -16,8 +16,8 @@
             <div class="form_top">
                 <h2 style="text-align:center">口コミの投稿</h2>
                 <div class="form_title">
-                    <input class="ef" type="text" placeholder="" name="title">
-                    <label>タイトル</label>
+                    <input class="ef" size="45" type="text" placeholder="タイトル" name="title">
+                    <label></label>
                     <span class="focus_line"></span>
                 </div>
                 <select name="id" size="1">
@@ -32,13 +32,15 @@
                     <option value="9">ラウンジふるさと</option>
                     <option value="10">FamilyMart</option>
                 </select>
-                <input type="file" name="image" class="form-control">
+                <div style="text-align: center">
+                    <input type="file" name="image" class="form-control">
+                </div>
             </div>
 
             <div class="body">
                 <div class="form_contents">
                     <label class="ef">
-                        <textarea name="contents" rows="5" cols="160" placeholder="本文"></textarea><br><br>
+                        <textarea name="contents" maxlength="190" rows="5" cols="160" placeholder="本文"></textarea><br><br>
                     </label>
                     {{-- <input type="text" name="contents" size="100" placeholder="口コミの内容を記入してください"> --}}
                 </div>
@@ -53,7 +55,7 @@
                     <label for="star4"><span class="text">悪い</span>★</label>
                     <input id="star5" type="radio" name="rate" value="1" />
                     <label for="star5"><span class="text">最悪</span>★</label>
-                </div>
+                </div><br><br>
                 <input type="submit" value="送信" class="submit_button">
             </div>
         </form>
