@@ -31,6 +31,7 @@ Route::view('/post', 'post')->name('post');
 Route::view('/philosophy', 'philosophy')->name('philosophy');
 Route::view('/not_found', 'not_found')->name('not_found');
 Route::view('/log_in', 'log_in');
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
