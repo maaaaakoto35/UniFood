@@ -134,16 +134,16 @@ class PostsController extends Controller
      *
      */
     public function createProvisionalImage($image) {
-        $instance = new ProvisionalImage;
-        $id       = NULL;
-        $file     = array();
+        $instance          = new ProvisionalImage;
+        $priviousImg       = NULL;
+        $file              = array();
 
         if (ProvisionalImage::latest()) {
-            $id = ProvisionalImage::latest()->orderBy('id', 'desc')->first()->id;
+            $priviousImg = ProvisionalImage::latest()->orderBy('id', 'desc')->first();
         }
 
-        if ($id == true) {
-            $file['name'] = (int)$id+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
+        if ($priviousImg == true) {
+            $file['name'] = (int)$priviousImg['id']+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         } else {
             $file['name'] = 1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         }

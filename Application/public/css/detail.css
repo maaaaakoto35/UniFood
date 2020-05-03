@@ -39,6 +39,10 @@
     .review {
         text-align: center;
     }
+    .img {
+        width: 80%;
+        height: 20%;
+    }
 }
 @media screen and (max-width:500px) {
     /*スマホ用のcssを記述*/
@@ -58,5 +62,9 @@
     }
     .star-rating-back {
         color: #ccc;
+    }
+    .img {
+        width: 80%;
+        height: 20%;
     }
 }

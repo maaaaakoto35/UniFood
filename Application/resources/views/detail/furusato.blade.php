@@ -30,7 +30,7 @@
 
         <div class="contents">
             <div class="slider">
-                <img src="{{ asset('img/itibariki/Shokudo.jpg') }}" width="280" height="210" alt="logo">
+                <img src="{{ asset('img/furusato/Shokudo.jpg') }}" width="280" height="210" alt="logo">
                 {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
                 <img src="img/foods/food3.jpg" width="240" height="180" alt="">
                 <img src="img/foods/food4.jpg" width="240" height="180" alt="">
@@ -69,7 +69,11 @@
             <h2>{{$result["store_jname"]}}の口コミ</h2>
             @foreach ($posts as $post)
                 <p>{{$post["title"]}}</p>
+                <div class="post_time">{{$post["created_at"]}}</div>
                 <p>{{$post["contents"]}}</p>
+                @if (isset($post["img_name"]))
+                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像" class="img">
+                @endif
             @endforeach
         </div>
     </div>
