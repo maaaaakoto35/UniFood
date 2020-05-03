@@ -31,11 +31,20 @@
         vertical-align: top;
         width: 40%;
     }
+
+    /* はんなりのロゴを丸くする */
+    .slider img {
+        border-radius: 50%;
+        border-width: 4px;
+        border-style:solid;
+        border-color: black;
+    }
     .detail {
         display: inline-block;
         vertical-align: top;
         width: 50%;
     }
+
     .review {
         text-align: center;
     }
