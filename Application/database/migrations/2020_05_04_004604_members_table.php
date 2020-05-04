@@ -18,7 +18,7 @@ class MembersTable extends Migration
             $table->increments('member_id'); //口コミのid(auto)
             $table->string('name', 50); //名前
             $table->string('e-mail', 50); //メールアドレス
-            $table->integer('student_number', 6); //学籍番号
+            $table->integer('student_number')->length(6); //学籍番号
             $table->string('password', 30); //パスワード
             $table->string('img_name', 200)->nullable(); //画像ファイルのファイル名
             $table->string('img_path', 40)->nullable(); //画像ファイルのパス名
