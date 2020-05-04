@@ -25,13 +25,11 @@ Route::post('/post_confirm', 'PostsController@postConfirm');
 Route::get('/post', 'PostsController@index')->name('post');
 Route::get('/login', 'MembersController@logIn')->name('login');
 Route::post('/login', 'MembersController@indexLogIn');
-Route::get('/signup', 'MembersController@signUp')->name('signup');
-Route::post('/signup', 'MembersController@indexSignUp');
+Route::get('/signup', 'MembersController@signUp');
+Route::post('/signup', 'MembersController@indexSignUp')->name('signup');
 
 Route::view('/philosophy', 'philosophy')->name('philosophy');
 Route::view('/not_found', 'not_found')->name('not_found');
 Route::view('/log_in', 'log_in');
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 

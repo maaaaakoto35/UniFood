@@ -56,12 +56,12 @@ class MembersController extends Controller
                     self::createMember($instance['name'], $instance['e-mail'], $instance['studentNumber'], $instance['password']);
                 }
                 DB::commit();
-                return view('is_signup')->with('is_done', true);
+                return view('index');
             } catch (\Exception $e) {
                 DB::rollback();
             }
         }
-        return view('is_signup')->with('is_done', null);
+        return view('signup')->with('not_done', null);
     }
 
     /**
