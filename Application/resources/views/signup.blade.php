@@ -11,6 +11,10 @@
     <div class="wrapper">
         @include('header')
 
+        @if ($not_done)
+            <div>会員登録に失敗しました。全ての項目に記入して下さい。</div>
+        @endif
+
         <div class="form">
             <form action="login" method="POST" enctype="multipart/form-data">
                 @csrf
