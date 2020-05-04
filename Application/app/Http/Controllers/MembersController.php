@@ -8,9 +8,27 @@ use App\Member;
 
 class MembersController extends Controller
 {
-    public function indexSetup () {
-        $members = Member::latest()->get();
-        return view('set_up')->with('members', $members);
+    /**
+     * 会員登録表示
+     */
+    public function indexSignUp () {
+        if (session()->put('member_id')) {
+            return view('index');
+        } else {
+            $members = Member::latest()->get();
+            return view('signup')->with('members', $members);
+        }
+    }
+
+    /**
+     * ログイン表示
+     */
+    public function indexLogIn () {
+        if (session()->put('member_id')) {
+            return view('index');
+        } else {
+            return view('login');
+        }
     }
 
     /**
@@ -20,7 +38,7 @@ class MembersController extends Controller
      * @param Request student_number
      * @param Request password
      */
-    public function setUp (Request $request) {
+    public function SignUp (Request $request) {
         if (isset($request)) {
             $instance = array();
             $instance['name'] = $request->input('name');
@@ -38,12 +56,12 @@ class MembersController extends Controller
                     self::createMember($instance['name'], $instance['e-mail'], $instance['studentNumber'], $instance['password']);
                 }
                 DB::commit();
-                return view('is_set_up')->with('is_done', true);
+                return view('is_signup')->with('is_done', true);
             } catch (\Exception $e) {
                 DB::rollback();
             }
         }
-        return view('is_set_up')->with('is_done', null);
+        return view('is_signup')->with('is_done', null);
     }
 
     /**
@@ -52,18 +70,42 @@ class MembersController extends Controller
      * @param Request password
      */
     public function logIn (Request $request) {
+        //ログイン済みのとき
+        $member_id = session()->get('member_id', null);
+        $priviousPage = $request->input('privious_page', 'home');
+        if (!isset($member_id)) {
+            return redirect($priviousPage);
+        }
+
+        //未ログインの時
         $e_mail   = $request->input('e-mail');
         $password = $request->input('password');
         $member   = Member::where('e-mail', $e_mail)->first();
 
         if (isset($member)) {
             if ($password == $member['password']) {
-                return redirect()->route('index_member_id', ['member_id' => $member['id']]);
+                session()->put(['member_id' => $member['member_id']]);
+                return redirect($priviousPage);
             } else {
-                return view('log_in')->with('not_password', true);
+                return view('login')->with('not_password', true);
             }
         } else {
-            return view('log_in')->with('not_member', true);
+            return view('login')->with('not_member', true);
+        }
+    }
+
+    /**
+     * ログアウト
+     */
+    public function logOut (Request $request) {
+        //未ログインの時
+        $member_id = session()->get('member_id', null);
+        $priviousPage = $request->input('privious_page', 'home');
+        if (isset($member_id)) {
+            return redirect('index');
+        } else {
+            session()->forget('member_id');
+            return redirect('index');
         }
     }
 

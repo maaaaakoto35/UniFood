@@ -26,9 +26,13 @@
     background-image: url('../img/sp_top_background.jpg');
     background-size: 100% auto;
   }
+  .top-icon {
+    display: inline-block;
+    text-align: left;
+  }
   .top-link {
-    display: block;
-    float: right;
+    display: inline-block;
+    text-align: right;
   }
   .title {
     display: inline-block;

@@ -48,7 +48,7 @@
     .review {
         text-align: center;
     }
-    .img {
+    .post_img {
         width: 80%;
         height: 20%;
     }
@@ -72,7 +72,7 @@
     .star-rating-back {
         color: #ccc;
     }
-    .img {
+    .post_img {
         width: 80%;
         height: 20%;
     }

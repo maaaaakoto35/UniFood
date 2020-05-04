@@ -10,7 +10,11 @@ use App\ProvisionalImage;
 class PostsController extends Controller
 {
     public function index () {
-        return view('post');
+        if (session()->put('member_id')) {
+            return view('post');
+        } else {
+            return view('login');
+        }
     }
 
     /**
@@ -134,16 +138,16 @@ class PostsController extends Controller
      *
      */
     public function createProvisionalImage($image) {
-        $instance          = new ProvisionalImage;
-        $priviousImg       = NULL;
-        $file              = array();
+        $instance = new ProvisionalImage;
+        $id       = NULL;
+        $file     = array();
 
         if (ProvisionalImage::latest()) {
-            $priviousImg = ProvisionalImage::latest()->orderBy('id', 'desc')->first();
+            $id = ProvisionalImage::latest()->orderBy('id', 'desc')->first()->id;
         }
 
-        if ($priviousImg == true) {
-            $file['name'] = (int)$priviousImg['id']+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
+        if ($id == true) {
+            $file['name'] = (int)$id+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         } else {
             $file['name'] = 1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         }

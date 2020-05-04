@@ -23,11 +23,12 @@ Route::post('/detail', 'DetailsController@storeShow')->name('store_show');
 Route::post('/post', 'PostsController@post');
 Route::get('/post_confirm', 'PostsController@postConfirm')->name('post_confirm');
 Route::post('/post_confirm', 'PostsController@postConfirm');
-Route::post('/log_in', 'MembersController@logIn');
-Route::get('/set_up', 'MembersController@indexSetup');
-Route::post('/set_up', 'MembersController@Setup');
+Route::get('/post', 'PostsController@index')->name('post');
+Route::get('/login', 'MembersController@logIn')->name('login');
+Route::post('/login', 'MembersController@indexLogIn');
+Route::get('/signup', 'MembersController@signUp')->name('signup');
+Route::post('/signup', 'MembersController@indexSignUp');
 
-Route::view('/post', 'post')->name('post');
 Route::view('/philosophy', 'philosophy')->name('philosophy');
 Route::view('/not_found', 'not_found')->name('not_found');
 Route::view('/log_in', 'log_in');
