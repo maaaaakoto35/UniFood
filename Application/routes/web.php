@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', 'StoresController@index')->name('index');
-Route::get('/{member_id}', 'StoresController@index')->name('index_member_id');
 Route::post('/', 'StoresController@isStore')->name('is_store');
 Route::post('/search', 'StoresController@search');
 Route::get('/search', 'StoresController@search')->name('search');
