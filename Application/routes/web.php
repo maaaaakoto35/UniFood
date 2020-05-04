@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', 'StoresController@index')->name('index');
+Route::get('/{member_id}', 'StoresController@index')->name('index_member_id');
 Route::post('/', 'StoresController@isStore')->name('is_store');
 Route::post('/search', 'StoresController@search');
 Route::get('/search', 'StoresController@search')->name('search');
@@ -30,3 +31,8 @@ Route::post('/signup', 'MembersController@indexSignUp');
 
 Route::view('/philosophy', 'philosophy')->name('philosophy');
 Route::view('/not_found', 'not_found')->name('not_found');
+Route::view('/log_in', 'log_in');
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
