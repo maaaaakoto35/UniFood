@@ -10,7 +10,11 @@ use App\ProvisionalImage;
 class PostsController extends Controller
 {
     public function index () {
-        return view('post');
+        if (session()->put('member_id')) {
+            return view('post');
+        } else {
+            return view('login');
+        }
     }
 
     /**

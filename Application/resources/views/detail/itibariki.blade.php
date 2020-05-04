@@ -71,13 +71,11 @@
         <div class="review">
             <h2>{{$result["store_jname"]}}の口コミ</h2>
             @foreach ($posts as $post)
-                <div class="post_top">
-                    <div class="post_title">{{$post["title"]}}</div>
-                    <div class="post_time">{{$post["created_at"]}}</div>
-                </div>
-                <div class="post_content">
-                    <p>{{$post["contents"]}}</p>
-                </div>
+                <p>{{$post["title"]}}</p>
+                <p>{{$post["contents"]}}</p>
+                @if (isset($post["img_name"]))
+                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像" class="post_img">
+                @endif
             @endforeach
         </div>
     </div>

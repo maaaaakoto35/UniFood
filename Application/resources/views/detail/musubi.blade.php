@@ -71,7 +71,7 @@
                 <p>{{$post["title"]}}</p>
                 <p>{{$post["contents"]}}</p>
                 @if (isset($post["img_name"]))
-                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像">
+                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像" class="post_img">
                 @endif
             @endforeach
         </div>
