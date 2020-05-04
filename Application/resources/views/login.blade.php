@@ -15,6 +15,7 @@
             <form action="login" method="POST">
                 <input type="text" size="50" name="e-mail" placeholder="メールアドレスを入力して下さい">
                 <input type="password" size="30" name="password" placeholder="パスワード">
+                <input type="submit" value="ログイン">
             </form>
         </div>
     </div>

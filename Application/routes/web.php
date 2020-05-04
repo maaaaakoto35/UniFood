@@ -23,10 +23,10 @@ Route::post('/post', 'PostsController@post');
 Route::get('/post_confirm', 'PostsController@postConfirm')->name('post_confirm');
 Route::post('/post_confirm', 'PostsController@postConfirm');
 Route::get('/post', 'PostsController@index')->name('post');
-Route::get('/login', 'MembersController@logIn')->name('login');
-Route::post('/login', 'MembersController@indexLogIn');
-Route::get('/signup', 'MembersController@signUp');
-Route::post('/signup', 'MembersController@indexSignUp')->name('signup');
+Route::get('/login', 'MembersController@indexLogIn')->name('login');
+Route::post('/login', 'MembersController@logIn');
+Route::get('/signup', 'MembersController@indexSignUp')->name('signup');
+Route::post('/signup', 'MembersController@signUp');
 
 Route::view('/philosophy', 'philosophy')->name('philosophy');
 Route::view('/not_found', 'not_found')->name('not_found');
