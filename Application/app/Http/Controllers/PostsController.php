@@ -10,7 +10,7 @@ use App\ProvisionalImage;
 class PostsController extends Controller
 {
     public function index () {
-        if (session()->put('member_id')) {
+        if (session()->has('member_id')) {
             return view('post');
         } else {
             return view('login');
@@ -31,8 +31,8 @@ class PostsController extends Controller
             $formInfo['storeName']  = $query->store_name;
             $formInfo['storeJName'] = $query->store_jname;
 
-            session()->put('form_info[]', $formInfo);
-            session()->put('message', 'この口コミを投稿しますか？');
+            session(['form_info[]' => $formInfo]);
+            $request->session()->flash('message', 'この口コミを投稿しますか？');
 
             if ($request->hasFile('image')) {
                 $image = self::createProvisionalImage($request->file('image'));
@@ -71,7 +71,7 @@ class PostsController extends Controller
                     }
                     self::updateRate($formInfo[$keys[0]]);
                     DB::commit();
-                    $request->session()->forget('form_info');
+                    session()->forget('form_info');
                     $request->session()->regenerateToken();
                     return view('done_post');
                 } catch (\Exception $e) {
