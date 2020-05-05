@@ -16,7 +16,7 @@
         @endif
 
         <div class="form">
-            <form action="login" method="POST" enctype="multipart/form-data">
+            <form action="/signup" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="text" size="50" name="name" placeholder="名前">
                 <input type="text" size="50" name="e-mail" placeholder="メールアドレス">

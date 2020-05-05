@@ -11,8 +11,17 @@
     <div class="wrapper">
         @include('header')
 
+        <div class="warnig" style="color:red;">
+            @if (isset($not_password))
+                パスワードが違います。
+            @elseif (isset($not_member))
+                メールアドレスが違います。
+            @endif
+        </div>
+
         <div class="form">
-            <form action="login" method="POST">
+            <form action="/login" method="POST">
+                @csrf
                 <input type="text" size="50" name="e-mail" placeholder="メールアドレスを入力して下さい">
                 <input type="password" size="30" name="password" placeholder="パスワード">
                 <input type="submit" value="ログイン">
