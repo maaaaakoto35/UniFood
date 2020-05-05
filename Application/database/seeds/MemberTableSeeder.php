@@ -15,7 +15,7 @@ class MemberTableSeeder extends Seeder
         DB::table('members')->insert([
             [
                 'name'             => 'makoto',
-                'e_mail'           => 'maaaaaakoto35@gmail.com',
+                'e-mail'           => 'maaaaaakoto35@gmail.com',
                 'student_number'   => 853842,
                 'password'         => 'password',
             ]

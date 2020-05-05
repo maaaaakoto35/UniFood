@@ -61,7 +61,7 @@ class MembersController extends Controller
                 DB::rollback();
             }
         }
-        return view('signup')->with('not_done', null);
+        return view('signup')->with('not_done', true);
     }
 
     /**
@@ -74,7 +74,7 @@ class MembersController extends Controller
         $member_id = session()->get('member_id', null);
         $priviousPage = $request->input('privious_page', 'home');
         if (!isset($member_id)) {
-            return redirect($priviousPage);
+            return redirect()->route('index');
         }
 
         //未ログインの時
@@ -85,7 +85,7 @@ class MembersController extends Controller
         if (isset($member)) {
             if ($password == $member['password']) {
                 session()->put(['member_id' => $member['member_id']]);
-                return redirect($priviousPage);
+                return redirect()->route('index');
             } else {
                 return view('login')->with('not_password', true);
             }
