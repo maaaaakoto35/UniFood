@@ -12,7 +12,7 @@ class MembersController extends Controller
      * 会員登録表示
      */
     public function indexSignUp () {
-        if (session()->put('member_id')) {
+        if (session()->has('member_id')) {
             return view('index');
         } else {
             $members = Member::latest()->get();
@@ -24,7 +24,7 @@ class MembersController extends Controller
      * ログイン表示
      */
     public function indexLogIn () {
-        if (session()->put('member_id')) {
+        if (session()->has('member_id')) {
             return view('index');
         } else {
             return view('login');
@@ -56,6 +56,8 @@ class MembersController extends Controller
                     self::createMember($instance['name'], $instance['e-mail'], $instance['studentNumber'], $instance['password']);
                 }
                 DB::commit();
+                $member = Member::where('name', $instance['name'])->first();
+                session(['member_id' => $member['id']]);
                 return view('index');
             } catch (\Exception $e) {
                 DB::rollback();
@@ -71,9 +73,9 @@ class MembersController extends Controller
      */
     public function logIn (Request $request) {
         //ログイン済みのとき
-        $member_id = session()->get('member_id', null);
+        $memberId = session('member_id', null);
         $priviousPage = $request->input('privious_page', 'home');
-        if (!isset($member_id)) {
+        if (isset($memberId)) {
             return redirect()->route('index');
         }
 
@@ -84,7 +86,7 @@ class MembersController extends Controller
 
         if (isset($member)) {
             if ($password == $member['password']) {
-                session()->put(['member_id' => $member['member_id']]);
+                session(['member_id' => $member['id']]);
                 return redirect()->route('index');
             } else {
                 return view('login')->with('not_password', true);
@@ -99,9 +101,9 @@ class MembersController extends Controller
      */
     public function logOut (Request $request) {
         //未ログインの時
-        $member_id = session()->get('member_id', null);
+        $memberId = session('member_id', null);
         $priviousPage = $request->input('privious_page', 'home');
-        if (isset($member_id)) {
+        if (isset($memberId)) {
             return redirect('index');
         } else {
             session()->forget('member_id');
