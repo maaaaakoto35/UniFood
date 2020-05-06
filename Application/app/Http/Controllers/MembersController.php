@@ -103,11 +103,25 @@ class MembersController extends Controller
         //未ログインの時
         $memberId = session('member_id', null);
         $priviousPage = $request->input('privious_page', 'home');
-        if (isset($memberId)) {
+        if (!isset($memberId)) {
             return redirect('index');
         } else {
             session()->forget('member_id');
             return redirect('index');
+        }
+    }
+
+    /**
+     * マイページ
+     */
+    public function myPage () {
+        //未ログインの時
+        $memberId = session('member_id', null);
+        if (isset($memberId)) {
+            return redirect()->route('login');
+        } else {
+            $memberInfo = Member::where('member_id', $memberId)->first();
+            return view('my_page')->with('member_info', $memberInfo);
         }
     }
 

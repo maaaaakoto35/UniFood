@@ -4,7 +4,7 @@
     {{-- タイトル --}}
     <div class="top-icon">
         @if (Session::has('member_id'))
-            <img src="img/members/log_in.png" alt="">
+            　<img src="img/members/log_in.png" alt="">
         @endif
     </div>
 

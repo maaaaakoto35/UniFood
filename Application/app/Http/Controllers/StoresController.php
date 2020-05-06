@@ -15,7 +15,7 @@ class StoresController extends Controller
         $stores = Store::latest()->get();
         $sideList = [
             'UniFoodとは?',
-            '無料会員登録',
+            'マイページ',
             'ログイン',
             '口コミ投稿',
         ];
@@ -30,7 +30,7 @@ class StoresController extends Controller
         $stores = Store::latest()->get();
         $sideList = [
             'UniFoodとは?',
-            '無料会員登録',
+            'マイページ',
             'ログイン',
             '口コミ投稿',
         ];

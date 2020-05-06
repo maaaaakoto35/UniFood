@@ -27,6 +27,10 @@
                 <input type="submit" value="ログイン">
             </form>
         </div>
+
+        <div class="sign_up_link">
+            <a href="{{ route('signup') }}">会員登録はこちら</a>
+        </div>
     </div>
 </body>
 </html>
