@@ -11,7 +11,7 @@
     <div class="wrapper">
         @include('header')
 
-        @if ($not_done)
+        @if (isset($not_done))
             <div>会員登録に失敗しました。全ての項目に記入して下さい。</div>
         @endif
 
