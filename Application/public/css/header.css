@@ -5,9 +5,15 @@
     background-image: url('../img/top_background.jpg');
     background-size: 100% auto;
   }
+  .top-icon {
+    display: inline-block;
+    text-align: left;
+    width: 70%;
+  }
   .top-link {
-    display: block;
-    float: right;
+    display: inline-block;
+    text-align: right;
+    width: 28%;
   }
   .title {
     display: inline-block;
@@ -29,10 +35,12 @@
   .top-icon {
     display: inline-block;
     text-align: left;
+    width: 70%;
   }
   .top-link {
     display: inline-block;
     text-align: right;
+    width: 28%;
   }
   .title {
     display: inline-block;
