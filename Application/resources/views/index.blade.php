@@ -103,7 +103,7 @@
                     @elseif ($key == 0)
                         <div class="side_list"><a href="{{ route('philosophy') }}">{{$side}}</a></div>
                     @elseif ($key == 1)
-                        <div class="side_list"><a href="{{ route('signup') }}">{{$side}}</a></div>
+                        <div class="side_list"><a href="{{ route('not_found') }}">{{$side}}</a></div>
                     @elseif ($key == 2)
                         <div class="side_list"><a href="{{ route('login') }}">{{$side}}</a></div>
                     @endif
