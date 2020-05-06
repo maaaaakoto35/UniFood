@@ -57,7 +57,7 @@ class MembersController extends Controller
                 }
                 DB::commit();
                 $member = Member::where('name', $instance['name'])->first();
-                session(['member_id' => $member['id']]);
+                session(['member_id' => $member['member_id']]);
                 return view('index');
             } catch (\Exception $e) {
                 DB::rollback();
@@ -86,7 +86,7 @@ class MembersController extends Controller
 
         if (isset($member)) {
             if ($password == $member['password']) {
-                session(['member_id' => $member['id']]);
+                session(['member_id' => $member['member_id']]);
                 return redirect()->route('index');
             } else {
                 return view('login')->with('not_password', true);
