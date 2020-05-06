@@ -5,12 +5,12 @@
     background-image: url('../img/top_background.jpg');
     background-size: 100% auto;
   }
-  .top-icon {
+  .top-link {
     display: inline-block;
     text-align: left;
     width: 70%;
   }
-  .top-link {
+  .top-icon {
     display: inline-block;
     text-align: right;
     width: 28%;
@@ -32,12 +32,12 @@
     background-image: url('../img/sp_top_background.jpg');
     background-size: 100% auto;
   }
-  .top-icon {
+  .top-link {
     display: inline-block;
     text-align: left;
     width: 70%;
   }
-  .top-link {
+  .top-icon {
     display: inline-block;
     text-align: right;
     width: 28%;
