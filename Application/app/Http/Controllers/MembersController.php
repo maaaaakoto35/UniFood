@@ -13,7 +13,7 @@ class MembersController extends Controller
      */
     public function indexSignUp () {
         if (session()->has('member_id')) {
-            return view('index');
+            return redirect()->route('index');
         } else {
             $members = Member::latest()->get();
             return view('signup')->with('members', $members);
@@ -25,7 +25,7 @@ class MembersController extends Controller
      */
     public function indexLogIn () {
         if (session()->has('member_id')) {
-            return view('index');
+            return redirect()->route('index');
         } else {
             return view('login');
         }

@@ -2,14 +2,14 @@
 
 <div class="top">
     {{-- タイトル --}}
-    @if (Session::has('member_id'))
-        <div class="icon">
-            ログイン中
-        </div>
-    @endif
+    <div class="top-icon">
+        @if (Session::has('member_id'))
+            <img src="img/members/log_in.png" alt="">
+        @endif
+    </div>
 
     {{-- topページのリンク --}}
-    <div class="top-ink" style="float: right;">
+    <div class="top-link">
         <a href="{{ route('index') }}">TOPページ</a>
     </div>
 
