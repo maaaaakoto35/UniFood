@@ -35,7 +35,7 @@
                     </div><br><br>
                     {{-- <input type="text" size="50" name="e-mail" placeholder="メールアドレスを入力して下さい">
                     <input type="password" size="30" name="password" placeholder="パスワード"> --}}
-                    <input type="submit" id="submit_button" value="ログイン">
+                    <input type="submit" class="submit_button" value="ログイン">
                 </form>
             </div>
         </div>
