@@ -5,15 +5,18 @@
 @media screen and (max-width:500px) {
     /*スマホ用のcssを記述*/
     .main {
-        text-align: center;
-        margin: 0% 10% 0% 10%;
-        /* flex-direction: column; */
+        background-color: #ceeafa;
+        position: absolute;          /* 位置指定 */
+        top: 50%;                    /* 親要素の半分下にずらす */
+        left: 50%;                   /* 親要素の半分右にずらす */
+        transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+        width: 70%;
+        height: 20%;
+        border: 1px solid #000;
     }
     .content {
         position: absolute;          /* 位置指定 */
-        top: 50%;                    /* 親要素の半分下にずらす */
-        left: 48%;                   /* 親要素の半分右にずらす */
-        transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+        top: 20%;                    /* 縦の位置をずらす */
     }
     .form {
         display: inline-block;
@@ -24,7 +27,6 @@
         box-sizing: border-box;
         width: 100%;
         letter-spacing: 1px;
-        padding-left: 4em;
     }
     .form input[type='text']:focus {
         outline: none;
@@ -65,4 +67,25 @@
         transition: 0.3s;
         color: #da3c41;
     }
+    .submit_button {
+		position: relative;
+		width: 58px;
+		height: 35px;
+		display: inline-block;
+		font-weight: bold;
+		text-decoration: none;
+		color: #FFF;
+		text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+		padding: 0.3em 0.5em;
+		background: #00bcd4;
+		border-top: solid 3px #00a3d4;
+		border-bottom: solid 3px #00a3d4;
+		transition: .4s;
+		-webkit-appearance: none;
+		border-radius: 0;
+	}
+	.submit_button:hover {
+		text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+					6px 0px 15px rgba(255, 255, 240, 0.83);
+	}
 }

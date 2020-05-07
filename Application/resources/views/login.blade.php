@@ -24,18 +24,18 @@
                 <form action="/login" method="POST">
                     @csrf
                     <div class="form">
-                        <input class="ef" size="50" type="text" placeholder="メールアドレスを入力して下さい" name="e-mail">
+                        <input class="ef" size="50" type="text" placeholder="メールアドレス" name="e-mail">
                         <label></label>
                         <span class="focus_line"></span>
-                    </div>
+                    </div><br><br>
                     <div class="form">
                         <input class="ef" size="30" type="password" placeholder="パスワード" name="password">
                         <label></label>
                         <span class="focus_line"></span>
-                    </div>
+                    </div><br><br>
                     {{-- <input type="text" size="50" name="e-mail" placeholder="メールアドレスを入力して下さい">
                     <input type="password" size="30" name="password" placeholder="パスワード"> --}}
-                    <input type="submit" value="ログイン">
+                    <input type="submit" id="submit_button" value="ログイン">
                 </form>
             </div>
         </div>
