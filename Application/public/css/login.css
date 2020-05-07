@@ -1,0 +1,68 @@
+@media screen and (min-width:501px) {
+    /*pc用のcssを記述*/
+
+}
+@media screen and (max-width:500px) {
+    /*スマホ用のcssを記述*/
+    .main {
+        text-align: center;
+        margin: 0% 10% 0% 10%;
+        /* flex-direction: column; */
+    }
+    .content {
+        position: absolute;          /* 位置指定 */
+        top: 50%;                    /* 親要素の半分下にずらす */
+        left: 48%;                   /* 親要素の半分右にずらす */
+        transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+    }
+    .form {
+        display: inline-block;
+        position: relative;
+    }
+    .form input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+    }
+    .form input[type='text']:focus {
+        outline: none;
+    }
+    .ef {
+        padding: 4px 0;
+        border: 0;
+        border-bottom: 1px solid #1b2538;
+        background-color: transparent;
+    }
+    .ef ~ .focus_line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: 0.4s;
+        background-color: #da3c41;
+    }
+    .ef:focus ~ .focus_line,
+    .form.ef ~ .focus_line {
+        width: 100%;
+        transition: 0.4s;
+    }
+    .ef ~ label {
+        position: absolute;
+        z-index: -1;
+        top: 4px;
+        left: 0;
+        width: 100%;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+        color: #aaaaaa;
+    }
+    .ef:focus ~ label, .form＿title.ef ~ label {
+        font-size: 12px;
+        top: -16px;
+        transition: 0.3s;
+        color: #da3c41;
+    }
+}
