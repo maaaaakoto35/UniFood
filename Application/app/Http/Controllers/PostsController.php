@@ -12,8 +12,8 @@ class PostsController extends Controller
 {
     public function index () {
         if (session()->has('member_id')) {
-            $memberName = Member::where('member_id', session('member_id'));
-            return view('post')->with('member_name', $memberName);
+            $memberInfo = Member::where('member_id', session('member_id'))->first();
+            return view('post')->with('member_name', $memberInfo['name']);
         } else {
             return view('post');
         }

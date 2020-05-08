@@ -17,7 +17,7 @@
                 <h2 style="text-align:center">口コミの投稿</h2>
                 <div class="form_name">
                     @if (Session::has('member_id'))
-                        <input class="ef" type="text" size="30" placeholder="" name="name" value="{{ session('member_name') }}">
+                        <input class="ef" type="text" size="30" placeholder="" name="name" value="{{ $member_name }}">
                         <label></label>
                         <span class="name_line"></span>
                     @else

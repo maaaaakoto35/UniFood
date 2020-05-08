@@ -31,7 +31,7 @@
                 <label></label>
                 <span class="focus_line"></span>
             </div><br><br>
-            <input type="submit" class="submit_button" value="ログイン">
+            <input type="submit" class="submit_button" value="ログイン"><br><br><br>
         </form>
 
         <div class="sign_up_link">
