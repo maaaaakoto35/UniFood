@@ -4,21 +4,6 @@
 }
 @media screen and (max-width:500px) {
     /*スマホ用のcssを記述*/
-    .main {
-        background-color: #ceeafa;
-        position: absolute;          /* 位置指定 */
-        top: 50%;                    /* 親要素の半分下にずらす */
-        left: 50%;                   /* 親要素の半分右にずらす */
-        transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
-        width: 70%;
-        height: 30%;
-        border: 1px solid rgb(134, 134, 134);
-    }
-    .content {
-        text-align: center;
-        position: absolute;          /* 位置指定 */
-        top: 20%;                    /* 縦の位置をずらす */
-    }
     .form {
         display: inline-block;
         position: relative;
