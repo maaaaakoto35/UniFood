@@ -72,7 +72,7 @@ class PostsController extends Controller
                     } else {
                         self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $formInfo[$keys[6]]);
                     }
-                    self::updateRate($formInfo[$keys[0]]);
+                    self::updateRate($formInfo[$keys[3]]);
                     DB::commit();
                     session()->forget('form_info');
                     $request->session()->regenerateToken();
@@ -95,6 +95,7 @@ class PostsController extends Controller
      *
      */
     public function createPost($title, $storeName, $storeJName, $contents, $rate, $name, $imageName = NULL, $imagePath = NULL) {
+ var_dump("!!!!!".$name);
         $rate = (int) $rate;
         $instance = new Post;
         $instance->create([
