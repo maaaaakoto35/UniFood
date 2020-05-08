@@ -26,7 +26,7 @@
     .form input[type='text'] {
         font: 15px/24px sans-serif;
         box-sizing: border-box;
-        width: 100%;
+        width: 80%;
         letter-spacing: 1px;
     }
     .form input[type='text']:focus {
@@ -49,7 +49,7 @@
     }
     .ef:focus ~ .focus_line,
     .form.ef ~ .focus_line {
-        width: 100%;
+        width: 80%;
         transition: 0.4s;
     }
     .ef ~ label {

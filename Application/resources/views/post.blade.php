@@ -19,11 +19,11 @@
                     @if (Session::has('member_id'))
                         <input class="ef" type="text" size="30" placeholder="" name="name" value="{{ session('member_name') }}">
                         <label></label>
-                        <span class="focus_line"></span>
+                        <span class="name_line"></span>
                     @else
                         <input class="ef" type="text" size="30" placeholder="名前" name="name">
                         <label></label>
-                        <span class="focus_line"></span>
+                        <span class="name_line"></span>
                     @endif
                 </div><br><br>
                 <div class="form_title">
