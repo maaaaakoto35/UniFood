@@ -16,6 +16,7 @@ class PostsTable extends Migration
         //tableの作成
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id'); //口コミのid(auto)
+            $table->string('name', 30); //名前
             $table->string('title', 50); //タイトル
             $table->string('store_name'); //店名
             $table->string('store_jname'); //店名(ja)

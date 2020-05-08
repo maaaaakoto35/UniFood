@@ -33,6 +33,55 @@
 	.rate input[type='radio']:checked ~ label{
 		color: #ffcc00;
 	}
+	.form_name{
+        display: inline-block;
+        position: relative;
+    }
+    .form_nameinput[type='text'] {
+        font: 13px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+    }
+    .form_nameinput[type='text']:focus {
+        outline: none;
+    }
+    .ef {
+        padding: 4px 0;
+        border: 0;
+        border-bottom: 1px solid #1b2538;
+        background-color: transparent;
+    }
+    .ef ~ .focus_line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: 0.4s;
+        background-color: #da3c41;
+    }
+    .ef:focus ~ .focus_line,
+    .form_name.ef ~ .focus_line {
+        width: 100%;
+        transition: 0.4s;
+    }
+    .ef ~ label {
+        position: absolute;
+        z-index: -1;
+        top: 4px;
+        left: 0;
+        width: 100%;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+        color: #aaaaaa;
+    }
+    .ef:focus ~ label, .form_name.ef ~ label {
+        font-size: 11px;
+        top: -16px;
+        transition: 0.3s;
+        color: #da3c41;
+    }
 	.form_title {
 		display: inline-block;
 		position: relative;

@@ -15,6 +15,17 @@
             @csrf
             <div class="form_top">
                 <h2 style="text-align:center">口コミの投稿</h2>
+                <div class="form_name">
+                    @if (Session::has('member_id'))
+                        <input class="ef" type="text" size="30" placeholder="" name="name" value="{{ session('member_name') }}">
+                        <label></label>
+                        <span class="focus_line"></span>
+                    @else
+                        <input class="ef" type="text" size="30" placeholder="名前" name="name">
+                        <label></label>
+                        <span class="focus_line"></span>
+                    @endif
+                </div><br><br>
                 <div class="form_title">
                     <input class="ef" size="45" type="text" placeholder="タイトル" name="title">
                     <label></label>

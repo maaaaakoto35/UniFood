@@ -63,7 +63,7 @@
         color: #aaaaaa;
     }
     .ef:focus ~ label, .form＿title.ef ~ label {
-        font-size: 12px;
+        font-size: 11px;
         top: -16px;
         transition: 0.3s;
         color: #da3c41;
@@ -90,15 +90,15 @@
 					6px 0px 15px rgba(255, 255, 240, 0.83);
     }
     input::-webkit-input-placeholder {
-        font-size: 12px;
+        font-size: 11px;
     }
     input:-moz-placeholder {
-        font-size: 12px;
+        font-size: 11px;
     }
     input::-moz-placeholder {
-        font-size: 12px;
+        font-size: 11px;
     }
     input:-ms-input-placeholder {
-        font-size: 12px;
+        font-size: 11px;
     }
 }

@@ -6,14 +6,16 @@ use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Store;
 use App\ProvisionalImage;
+use App\Member;
 
 class PostsController extends Controller
 {
     public function index () {
         if (session()->has('member_id')) {
-            return view('post');
+            $memberName = Member::where('member_id', session('member_id'));
+            return view('post')->with('member_name', $memberName);
         } else {
-            return view('login');
+            return view('post');
         }
     }
 
@@ -30,6 +32,7 @@ class PostsController extends Controller
             $query                  = Store::where('id', $formInfo['id'])->first();
             $formInfo['storeName']  = $query->store_name;
             $formInfo['storeJName'] = $query->store_jname;
+            $formInfo['name']       = $request->input('name');
 
             session(['form_info[]' => $formInfo]);
             $request->session()->flash('message', 'この口コミを投稿しますか？');
@@ -65,9 +68,9 @@ class PostsController extends Controller
                         $index++;
                     }
                     if (isset($imageName)) {
-                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $imageName, $imagePath);
+                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $formInfo[$keys[6]], $imageName, $imagePath);
                     } else {
-                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]]);
+                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $formInfo[$keys[6]]);
                     }
                     self::updateRate($formInfo[$keys[0]]);
                     DB::commit();
@@ -91,10 +94,11 @@ class PostsController extends Controller
      * @param query
      *
      */
-    public function createPost($title, $storeName, $storeJName, $contents, $rate, $imageName = NULL, $imagePath = NULL) {
+    public function createPost($title, $storeName, $storeJName, $contents, $rate, $name, $imageName = NULL, $imagePath = NULL) {
         $rate = (int) $rate;
         $instance = new Post;
         $instance->create([
+            'name'            => $name,
             'title'           => $title,
             'store_name'      => $storeName,
             'store_jname'     => $storeJName,

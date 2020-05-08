@@ -25,6 +25,7 @@
                     <input type="hidden" name="form_info['rate']" value="{{$form_info['rate']}}">
                     <input type="hidden" name="form_info['storeJName']" value="{{$form_info['storeJName']}}">
                     <input type="hidden" name="form_info['storeName']" value="{{$form_info['storeName']}}">
+                    <input type="hidden" name="form_info['name']" value="{{$form_info['name']}}">
                     @if (isset($image))
                         <input type="hidden" name="image_name" value="{{$image['name']}}">
                         <input type="hidden" name="image_path" value="{{$image['path']}}">
