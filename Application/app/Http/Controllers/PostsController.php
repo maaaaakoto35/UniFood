@@ -95,7 +95,6 @@ class PostsController extends Controller
      *
      */
     public function createPost($title, $storeName, $storeJName, $contents, $rate, $name, $imageName = NULL, $imagePath = NULL) {
- var_dump("!!!!!".$name);
         $rate = (int) $rate;
         $instance = new Post;
         $instance->create([
