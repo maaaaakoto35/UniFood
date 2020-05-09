@@ -4,68 +4,68 @@
         margin: 0% 10% 0% 10%;
         flex-direction: column;
     }
-    .store_title {
-        display: inline-block;
+
+    a {
+        color: #333;
+        text-decoration: none;
     }
-    .rate {
-        display: inline-block;
-        position: relative;
+
+    main {
+        width: 100%;
+        margin: 50px auto;
+        padding: 20px;
     }
-    .star-rating-front {
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        color: #ffcc33;
+
+    .tabs {
+        display: flex;
+        justify-content: space-around;
     }
-    .star-rating-back {
-        color: #ccc;
+
+    .tabs li {
+        width: 32%;
     }
-    /* .contents {
-        /* display: flex;
+
+    .tabs li a {
+        display: flex;
+        align-items: center;
         justify-content: center;
-    }*/
-    .slider {
-        display: inline-block;
-        padding-right: 3%;
-        vertical-align: top;
-        width: 40%;
+        height: 60px;
+        background-color: #bbb;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        transition: 0.3s;
     }
 
-    /* はんなりのロゴを丸くする */
-    .slider img {
-        border-radius: 50%;
-        border-width: 4px;
-        border-style:solid;
-        border-color: black;
-    }
-    .detail {
-        display: inline-block;
-        vertical-align: top;
-        width: 50%;
+    .tabs li a.active {
+        background-color: #fff;
     }
 
-    .review {
-        text-align: center;
+    .contents li {
+        background-color: #fff;
+        height: 700px;
+        padding: 20px;
+        display: none;
     }
-}
-@media screen and (max-width:500px) {
-    /*スマホ用のcssを記述*/
-    .wrapper {
-        overflow: hidden;
+
+    .contents li img {
+        width: 25%;
+        height: auto;
+        border-radius: 20%;
+        margin: 100px;
+        margin-top: 0;
+        float: left;
     }
-    .rate {
-        display: inline-block;
-        position: relative;
+
+    .contents li table {
+        float: center;
+        padding-top: 50px;
     }
-    .star-rating-front {
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        color: #ffcc33;
+
+    .contents li section {
+        float: center;
+        padding-top: 50px;
     }
-    .star-rating-back {
-        color: #ccc;
+
+    .contents li.active {
+        display: block;
     }
-}
