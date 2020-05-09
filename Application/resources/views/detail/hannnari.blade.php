@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>はんなり食堂</title>
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+    <script type="text/javascript" src="{{ asset('js/detail.js') }}"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -27,56 +28,56 @@
                 </div>
             @endif
         </div>
+        <main>
+            <ul class="tabs">
+                <li><a href="" class="active">はんなり食堂</a></li>
+                <li><a href="">メニュー</a></li>
+                <li><a href="">口コミ</a></li>
+            </ul>
 
-        <div class="contents">
-            <div class="slider">
-                <img src="{{ asset('img/'.$result["store_name"].'/Shokudo.jpg') }}" width="280" height="210" alt="logo">
-                {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food3.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food4.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food5.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food6.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food7.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food8.jpg" width="240" height="180" alt="">
-                <img src="img/foods/food9.jpg" width="240" height="180" alt=""> --}}
-            </div>
-
-            <div class="detail">
-                <div class="common">
+            <ul class="contents">
+                <li class="active">
+                    <img src="{{ asset('img/'.$result["store_name"].'/Shokudo.jpg') }}" width="280" height="210" alt="logo">
+                    {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food3.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food4.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food5.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food6.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food7.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food8.jpg" width="240" height="180" alt="">
+                    <img src="img/foods/food9.jpg" width="240" height="180" alt=""> --}}
                     <table>
                         <tr>ジャンル: {{$result["genre"]}} </tr>
                         <tr>価格帯: {{$result["price"]}} </tr>
                         <tr>営業時間: {{$result["open_time"]}} </tr>
                     </table><br><br>
-                </div>
+                    <section>
+                        低価格でボリュームある定食が人気の食堂。<br>
+                        日替りランチのバリエーションも<br>
+                        豊富で、カレー、丼物、麺類の品揃えも充実。<br>
+                        味と量に大満足です。うどん安すぎ<br>
+                    </section>
+                </li>
 
-                <div class="sentense">
-                    低価格でボリュームある定食が人気の食堂。<br>
-                    日替りランチのバリエーションも<br>
-                    豊富で、カレー、丼物、麺類の品揃えも充実。<br>
-                    味と量に大満足です。うどん安すぎ<br>
-                </div>
-            </div>
-        </div>
-
-        <div class="menus">
-            @foreach ($menus as &$menu)
-                <span>{{$menu["food_name"]}}</span>
-                <span>{{$menu["price"]}}円</span>
-            @endforeach
-        </div>
-
-        <div class="review">
-            <h2>{{$result["store_jname"]}}の口コミ</h2>
-            @foreach ($posts as $post)
-                <p>{{$post["title"]}}</p>
-                <div class="post_time">{{$post["created_at"]}}</div>
-                <p>{{$post["contents"]}}</p>
-                @if (isset($post["img_name"]))
-                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像" class="img">
-                @endif
-            @endforeach
-        </div>
+                <li>
+                    @foreach ($menus as &$menu)
+                         <span>{{$menu["food_name"]}}</span>
+                            <span>{{$menu["price"]}}円</span>
+                    @endforeach
+                </li>
+    
+                 <li>
+                    <h2>{{$result["store_jname"]}}の口コミ</h2>
+                    @foreach ($posts as $post)
+                            <p>{{$post["title"]}}</p>
+                            <p>{{$post["contents"]}}</p>
+                        @if (isset($post["img_name"]))
+                            <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像">
+                        @endif
+                    @endforeach
+                </li>
+            </ul>
+        </main>
     </div>
 </body>
 </html>
