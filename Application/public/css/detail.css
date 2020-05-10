@@ -5,67 +5,95 @@
         flex-direction: column;
     }
 
-    a {
-        color: #333;
-        text-decoration: none;
+    .store_title {
+        display: inline-block;
+    }
+    .rate {
+        display: inline-block;
+        position: relative;
+    }
+    .star-rating-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #ffcc33;
+    }
+    .star-rating-back {
+        color: #ccc;
     }
 
-    main {
-        width: 100%;
-        margin: 50px auto;
-        padding: 20px;
-    }
-
-    .tabs {
+    .tab-group{
         display: flex;
-        justify-content: space-around;
-    }
-
-    .tabs li {
-        width: 32%;
-    }
-
-    .tabs li a {
-        display: flex;
-        align-items: center;
         justify-content: center;
-        height: 60px;
-        background-color: #bbb;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-        transition: 0.3s;
     }
 
-    .tabs li a.active {
-        background-color: #fff;
+    .tab{
+        flex-grow: 1;
+        padding:5px;
+        list-style:none;
+        border:solid 1px #CCC;
+        text-align:center;
+        cursor:pointer;
     }
 
-    .contents li {
-        background-color: #fff;
-        height: 700px;
-        padding: 20px;
-        display: none;
+    .panel-group{
+        width: 100%;
+        height: 1000px;
+        border:solid 1px #CCC;
+        border-top:none;
+        background:#eee;
     }
 
-    .contents li img {
-        width: 25%;
-        height: auto;
-        border-radius: 20%;
-        margin: 100px;
-        margin-top: 0;
-        float: left;
+    .panel{
+        display:none;
     }
 
-    .contents li table {
-        float: center;
-        padding-top: 50px;
+    .panel.tab-A ul {
+        display: flex;
+        list-style: none;
     }
 
-    .contents li section {
-        float: center;
-        padding-top: 50px;
+    .panel.tab-A img {
+        width: 30%;
+        height: 30%;
     }
 
-    .contents li.active {
-        display: block;
+    .panel.tab-A li {
+        font-size: 20px;
+        line-height: 2;
+        margin: 0;
+        margin-left: 50px;
     }
+
+    .tab.is-active{
+        background:#333;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+    }
+
+    .panel.is-show{
+        display:block;
+    }
+}
+
+@media screen and (max-width:500px) {
+    /*スマホ用のcssを記述*/
+    .wrapper {
+        overflow: hidden;
+    }
+    .rate {
+        display: inline-block;
+        position: relative;
+    }
+    .star-rating-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #ffcc33;
+    }
+    .star-rating-back {
+        color: #ccc;
+    }
+  }
