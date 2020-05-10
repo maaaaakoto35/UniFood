@@ -23,8 +23,8 @@
         color: #ccc;
     }
 
-    .tab-group{
-        display: inline-block;
+    .tabs-group{
+        display: flex;
         justify-content: center;
     }
 
@@ -39,7 +39,7 @@
 
     .panel-group{
         width: 100%;
-        height: 1000px;
+        height: auto;
         border:solid 3px black;
         border-top:none;
         background:white;
@@ -95,5 +95,58 @@
     }
     .star-rating-back {
         color: #ccc;
+    }
+
+    .tabs-group{
+        display: flex;
+        justify-content: center;
+    }
+
+    .tab{
+        flex-grow: 1;
+        padding:5px;
+        list-style:none;
+        border:solid 1px #CCC;
+        text-align:center;
+        cursor:pointer;
+    }
+
+    .panel-group{
+        width: 100%;
+        height: auto;
+        border:solid 3px black;
+        border-top:none;
+        background:white;
+    }
+
+    .panel{
+        display:none;
+    }
+
+    .panel.tab-A ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .panel.tab-A img {
+        width: 30%;
+        height: 30%;
+    }
+
+    .panel.tab-A li {
+        font-size: 20px;
+        line-height: 2;
+        margin: 0;
+        margin-left: 50px;
+    }
+
+    .tab.is-active{
+        background:#333;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+    }
+
+    .panel.is-show{
+        display:block;
     }
   }
