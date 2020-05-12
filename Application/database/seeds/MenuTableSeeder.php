@@ -107,6 +107,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'itibariki',
                 'store_jname' => 'らーめん壱馬力',
                 'price'       => '500',
+                'food_img'    => 'itibariki/food<1>.jpg'
             ],
             [
                 'food_name'   => '濃厚魚介つけめん(大盛サービス)',
@@ -137,6 +138,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'itibariki',
                 'store_jname' => 'らーめん壱馬力',
                 'price'       => '380',
+                'food_img'    => 'itibariki/food<2>.jpg'
             ],
             [
                 'food_name'   => '温泉卵',
@@ -173,6 +175,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'itibariki',
                 'store_jname' => 'らーめん壱馬力',
                 'price'       => '250',
+                'food_img'    => 'itibariki/food<3>.jpg'
             ],
             [
                 'food_name'   => 'からあげ',
@@ -211,10 +214,24 @@ class MenuTableSeeder extends Seeder
                 'price'       => '460',
             ],
             [
-                'food_name'   => 'ジャンカツ',
+                'food_name'   => 'ふじカツ(味噌汁付)',
                 'store_name'  => 'fujikatu',
                 'store_jname' => 'ふじカツ',
                 'price'       => '490',
+                'food_img'    => 'fujikatu/food<1>.jpg'
+            ],
+            [
+                'food_name'   => 'ジャンカツ',
+                'store_name'  => 'fujikatu',
+                'store_jname' => 'ふじカツ',
+                'price'       => '460',
+            ],
+            [
+                'food_name'   => 'ジャンカツ(味噌汁付)',
+                'store_name'  => 'fujikatu',
+                'store_jname' => 'ふじカツ',
+                'price'       => '490',
+                'food_img'    => 'fujikatu/food<2>.jpg'
             ],
             [
                 'food_name'   => '一口ヒレカツ',
@@ -251,6 +268,13 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'fujikatu',
                 'store_jname' => 'ふじカツ',
                 'price'       => '460',
+            ],
+            [
+                'food_name'   => '若鶏の甘酢タルタルソース(味噌汁付)',
+                'store_name'  => 'fujikatu',
+                'store_jname' => 'ふじカツ',
+                'price'       => '490',
+                'food_img'    => 'fujikatu/food<3>.jpg'
             ],
             [
                 'food_name'   => 'ハーフ&ハーフカツ',
@@ -341,6 +365,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '200',
+                'food_img'    => 'miyako/food<1>.jpg'
             ],
             [
                 'food_name'   => 'ぶっかけうどん',
@@ -365,6 +390,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '260',
+                'food_img'    => 'miyako/food<6>.jpg'
             ],
             [
                 'food_name'   => 'わかめうどん',
@@ -407,6 +433,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '280',
+                'food_img'    => 'miyako/food<5>.jpg'
             ],
             [
                 'food_name'   => '月見とろろうどん',
@@ -425,6 +452,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '90',
+                'food_img'    => 'miyako/food<2>.jpg'
             ],
             [
                 'food_name'   => 'なす天',
@@ -443,12 +471,14 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '90',
+                'food_img'    => 'miyako/food<2>.jpg'
             ],
             [
                 'food_name'   => 'かき揚げ',
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '100',
+                'food_img'    => 'miyako/food<2>.jpg'
             ],
             [
                 'food_name'   => 'ちくわ天',
@@ -485,6 +515,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'miyako',
                 'store_jname' => 'MIYAKO製麺',
                 'price'       => '380',
+                'food_img'    => 'miyako/food<3>.jpg'
             ],
             [
                 'food_name'   => 'BIGマヨから丼',
@@ -575,6 +606,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'babyface',
                 'store_jname' => 'BABY FACE PLANETS',
                 'price'       => '400',
+                'food_img'    => 'babyface/food<1>.jpg',
             ],
             [
                 'food_name'   => 'ハーフ&ハーフオムライス',
@@ -623,6 +655,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'babyface',
                 'store_jname' => 'BABY FACE PLANETS',
                 'price'       => '500',
+                'food_img'    => 'babyface/food<2>.jpg'
             ],
             [
                 'food_name'   => 'BNTパスタ',
@@ -731,6 +764,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'cosmic',
                 'store_jname' => 'cosmic bakery cafe',
                 'price'       => '120',
+                'food_img'    => 'cosmic/food<1>.jpg'
             ],
             [
                 'food_name'   => 'チョコチップメロンパン',
@@ -815,6 +849,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'cosmic',
                 'store_jname' => 'cosmic bakery cafe',
                 'price'       => '100',
+                'food_img'    => 'cosmic/food<2>.jpg'
             ],
             [
                 'food_name'   => 'アイスコーヒー',
@@ -929,24 +964,28 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'cosmic',
                 'store_jname' => 'cosmic bakery cafe',
                 'price'       => '120',
+                'food_img'    => 'cosmic/food<3>.jpg'
             ],
             [
                 'food_name'   => 'ソフトクリーム(大)',
                 'store_name'  => 'cosmic',
                 'store_jname' => 'cosmic bakery cafe',
                 'price'       => '200',
+                'food_img'    => 'cosmic/food<3>.jpg'
             ],
             [
                 'food_name'   => 'あさイチ定食',
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '150',
+                'food_img'    => 'libre/food<1>.jpg'
             ],
             [
                 'food_name'   => '神山ランチ',
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '290',
+                'food_img'    => 'libre/food<6>.jpg'
             ],
             [
                 'food_name'   => '日替わりランチ',
@@ -971,6 +1010,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '430',
+                'food_img'    => 'libre/food<7>.jpg'
             ],
             [
                 'food_name'   => 'がっつりチキン南蛮ランチ',
@@ -983,6 +1023,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '430',
+                'food_img'    => 'libre/food<3>.jpg'
             ],
             [
                 'food_name'   => '玉子丼(S)',
@@ -1061,6 +1102,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '460',
+                'food_img'    => 'libre/food<4>.jpg' 
             ],
             [
                 'food_name'   => 'ライス(S)',
@@ -1175,12 +1217,14 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '460',
+                'food_img'    => 'libre/food<2>.jpg'
             ],
             [
                 'food_name'   => '(夜)日替り定食',
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '430',
+                'food_img'    => 'libre/food<9>.jpg'
             ],
             [
                 'food_name'   => '(夜)ふじカツのふじカツ',
@@ -1193,6 +1237,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '460',
+                'food_img'    => 'libre/food<11>.jpg'
             ],
             [
                 'food_name'   => '(夜)ふじカツの若鶏甘酢タルタル',
@@ -1205,6 +1250,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '390',
+                'food_img'    => 'libre/food<10>.jpg'
             ],
             [
                 'food_name'   => '(夜)なごみ亭のメガタレカツ丼',
@@ -1217,6 +1263,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'libre',
                 'store_jname' => 'LIBRE（リブレ）',
                 'price'       => '390',
+                'food_img'    => 'libre/food<5>.jpg'
             ],
             [
                 'food_name'   => '(夜)なごみ亭のメガ唐マヨ丼',
@@ -1325,6 +1372,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'hannnari',
                 'store_jname' => 'はんなり食堂',
                 'price'       => '100',
+                'food_img'    => 'hannnari/food<2>.jpg'
             ],
             [
                 'food_name'   => '日替り丼',
@@ -1433,6 +1481,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'hannnari',
                 'store_jname' => 'はんなり食堂',
                 'price'       => '280',
+                'food_img'    => 'hannnari/food<2>.jpg'
             ],
             [
                 'food_name'   => '醤油ラーメン',
@@ -1487,12 +1536,14 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'furusato',
                 'store_jname' => 'ラウンジふるさと',
                 'price'       => '540',
+                'food_img'    => 'furusato/food<1>.jpg'
             ],
             [
                 'food_name'   => '日替り定食',
                 'store_name'  => 'furusato',
                 'store_jname' => 'ラウンジふるさと',
                 'price'       => '540',
+                'food_img'    => 'furusato/food<2>.jpg'
             ],
             [
                 'food_name'   => '出し巻定食',
@@ -1529,6 +1580,7 @@ class MenuTableSeeder extends Seeder
                 'store_name'  => 'furusato',
                 'store_jname' => 'ラウンジふるさと',
                 'price'       => '450',
+                'food_img'    => 'furusato/food<3>.jpg'
             ],
             [
                 'food_name'   => '甘きつねうどん',

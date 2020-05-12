@@ -37,7 +37,7 @@
                                 <div class="form_text">
                                     <input type="text" name="store" class="input_text" size="60" value="{{$keyword}}"><br>
                                 </div>
-                                <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <a href="{{route('search')}}"><input id="submit_button" type="submit" value="検索" class="submit_button"></a>
                             </form>
                         @elseif($button == 0)
                             <form action="/search" method="POST" style="display: inline-block;">
@@ -45,7 +45,7 @@
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" value="{{$keyword}}"><br>
                                 </div>
-                                <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <a href="{{route('search')}}"><input id="submit_button" type="submit" value="検索" class="submit_button"></a>
                             </form>
                         @endif
                     @else
@@ -54,7 +54,7 @@
                             <div class="form_text">
                                 <input type="text" name="{{$button}}" class="input_text" size="60" value="{{$keyword}}"><br>
                             </div>
-                            <a href="{{route('search')}}"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                            <a href="{{route('search')}}"><input id="submit_button" type="submit" value="検索" class="submit_button"></a>
                         </form>
                     </div>
                     @endif
@@ -94,7 +94,11 @@
                                     <h2>{{$value['rate']}}</h2>
                                 </div>
                                 <div class="detail2">
-                                    <img src="img/{{$value['store_name']}}/Shokudo.jpg" width="240" height="180" alt="" style="display: inline-block">
+                                    @if (isset($value['food_img']))
+                                        <img src="img/{{$value['food_img']}}" width="240" height="180" alt="" style="display: inline-block">
+                                    @else
+                                        <img src="img/{{$value['store_name']}}/Shokudo.jpg" width="240" height="180" alt="" style="display: inline-block">
+                                    @endif
                                     <p style="display: inline-block">場所 {{$value['place']}}</p>
                                 </div>
                             </a>
