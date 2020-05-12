@@ -110,7 +110,7 @@
   }
   .search_button {
     width: 15%;
-    padding: 0% 5% 0% 10%;
+    padding: 0% 2.5% 0% 12%;
     display: inline-block;
   }
   .store_button {
@@ -126,6 +126,8 @@
     border-top: solid 3px #00a3d4;
     border-bottom: solid 3px #00a3d4;
     transition: .4s;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
   .store_button:hover {
     text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
@@ -144,6 +146,8 @@
     border-top: solid 3px #00a3d4;
     border-bottom: solid 3px #00a3d4;
     transition: .4s;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
   .food_button:hover {
     text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
@@ -162,6 +166,9 @@
     width: 100%;
     font-size: large;
     height: 52px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Chrome, Safari */
   }
   .submit_button {
     position: relative;
@@ -177,6 +184,8 @@
     border-top: solid 3px #00a3d4;
     border-bottom: solid 3px #00a3d4;
     transition: .4s;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
   .submit_button:hover {
     text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
@@ -185,9 +194,12 @@
   .slider {
     display: block;
   }
+  .side {
+    text-align: center;
+  }
   .side_list {
     display: inline-block;
     font-size: small;
-    padding: 0% 0% 0% 5%;
+    padding: 0% 0% 0% 3%;
   }
 }

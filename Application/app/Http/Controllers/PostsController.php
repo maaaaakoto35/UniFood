@@ -6,11 +6,17 @@ use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Store;
 use App\ProvisionalImage;
+use App\Member;
 
 class PostsController extends Controller
 {
     public function index () {
-        return view('post');
+        if (session()->has('member_id')) {
+            $memberInfo = Member::where('member_id', session('member_id'))->first();
+            return view('post')->with('member_name', $memberInfo['name']);
+        } else {
+            return view('post');
+        }
     }
 
     /**
@@ -26,9 +32,10 @@ class PostsController extends Controller
             $query                  = Store::where('id', $formInfo['id'])->first();
             $formInfo['storeName']  = $query->store_name;
             $formInfo['storeJName'] = $query->store_jname;
+            $formInfo['name']       = $request->input('name');
 
-            session()->put('form_info[]', $formInfo);
-            session()->put('message', 'この口コミを投稿しますか？');
+            session(['form_info[]' => $formInfo]);
+            $request->session()->flash('message', 'この口コミを投稿しますか？');
 
             if ($request->hasFile('image')) {
                 $image = self::createProvisionalImage($request->file('image'));
@@ -61,13 +68,13 @@ class PostsController extends Controller
                         $index++;
                     }
                     if (isset($imageName)) {
-                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $imageName, $imagePath);
+                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $formInfo[$keys[6]], $imageName, $imagePath);
                     } else {
-                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]]);
+                        self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $formInfo[$keys[6]]);
                     }
-                    self::updateRate($formInfo[$keys[0]]);
+                    self::updateRate($formInfo[$keys[3]]);
                     DB::commit();
-                    $request->session()->forget('form_info');
+                    session()->forget('form_info');
                     $request->session()->regenerateToken();
                     return view('done_post');
                 } catch (\Exception $e) {
@@ -87,10 +94,11 @@ class PostsController extends Controller
      * @param query
      *
      */
-    public function createPost($title, $storeName, $storeJName, $contents, $rate, $imageName = NULL, $imagePath = NULL) {
+    public function createPost($title, $storeName, $storeJName, $contents, $rate, $name, $imageName = NULL, $imagePath = NULL) {
         $rate = (int) $rate;
         $instance = new Post;
         $instance->create([
+            'name'            => $name,
             'title'           => $title,
             'store_name'      => $storeName,
             'store_jname'     => $storeJName,
@@ -135,8 +143,13 @@ class PostsController extends Controller
      */
     public function createProvisionalImage($image) {
         $instance = new ProvisionalImage;
-        $id       = ProvisionalImage::latest()->orderBy('id', 'desc')->first()->id;
+        $id       = NULL;
         $file     = array();
+
+        if (ProvisionalImage::latest()) {
+            $id = ProvisionalImage::latest()->orderBy('id', 'desc')->first()->id;
+        }
+
         if ($id == true) {
             $file['name'] = (int)$id+1 . '_' . $image->getClientOriginalName(); //id_file.png or .jpgになる
         } else {
@@ -151,7 +164,6 @@ class PostsController extends Controller
         ]);
 
         $image->storeAs('public/img/posts', $file['name']);
-        var_dump($image);
 
         return $file;
     }

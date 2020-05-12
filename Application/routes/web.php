@@ -17,10 +17,20 @@ Route::get('/', 'StoresController@index')->name('index');
 Route::post('/', 'StoresController@isStore')->name('is_store');
 Route::post('/search', 'StoresController@search');
 Route::get('/search', 'StoresController@search')->name('search');
-Route::get('/link', 'StoresController@link')->name('link');
 Route::get('/detail', 'DetailsController@index');
 Route::post('/detail', 'DetailsController@storeShow')->name('store_show');
-Route::get('/post', 'PostsController@index')->name('post');
 Route::post('/post', 'PostsController@post');
 Route::get('/post_confirm', 'PostsController@postConfirm')->name('post_confirm');
 Route::post('/post_confirm', 'PostsController@postConfirm');
+Route::get('/post', 'PostsController@index')->name('post');
+Route::get('/login', 'MembersController@indexLogIn')->name('login');
+Route::post('/login', 'MembersController@logIn');
+Route::get('/signup', 'MembersController@indexSignUp')->name('signup');
+Route::post('/signup', 'MembersController@signUp');
+Route::get('/my_page', 'MembersController@myPage')->name('my_page');
+
+Route::view('/philosophy', 'philosophy')->name('philosophy');
+Route::view('/not_found', 'not_found')->name('not_found');
+Route::view('/log_in', 'log_in');
+
+

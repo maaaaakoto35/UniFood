@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Cafeteria</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxSlider.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.bxslider.js') }}"></script>
 
     <script type="text/javascript">
             $(document).ready(function(){
@@ -52,7 +52,7 @@
                                 <div class="form_text">
                                     <input type="text" name="store" class="input_text" size="60" placeholder="店舗検索"><br>
                                 </div>
-                                <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <input id="submit_button" type="submit" value="検索" class="submit_button">
                             </form>
                         @elseif($is_store == 0)
                             <form action="/search" method="POST">
@@ -60,7 +60,7 @@
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" placeholder="メニュー検索"><br>
                                 </div>
-                                <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                                <input id="submit_button" type="submit" value="検索" class="submit_button"></a>
                             </form>
                         @endif
                     @else
@@ -69,7 +69,7 @@
                             <div class="form_text">
                                 <input type="text" name="store" class="input_text" size="60" placeholder="店舗かメニューかを選択してください"><br>
                             </div>
-                            <a href="/search"><input id="submit_button" type="submit"" value="検索" class="submit_button"></a>
+                            <input id="submit_button" type="submit" value="検索" class="submit_button">
                         </form>
                     @endif
                 </div>
@@ -99,11 +99,13 @@
             <div class="side">
                 @foreach ($side_list as $key => $side)
                     @if ($key == 3)
-                    <div class="side_list {{$key}}"><a href="/link?key=3">{{$side}}</a></div>
+                        <div class="side_list"><a href="{{ route('post') }}">{{$side}}</a></div>
                     @elseif ($key == 0)
-                        <div class="side_list {{$key}}"><a href="/link?key=0">{{$side}}</a></div>
-                    @else
-                        <div class="side_list {{$key}}"><a href="/link">{{$side}}</a></div>
+                        <div class="side_list"><a href="{{ route('philosophy') }}">{{$side}}</a></div>
+                    @elseif ($key == 1)
+                        <div class="side_list"><a href="{{ route('not_found') }}">{{$side}}</a></div>
+                    @elseif ($key == 2)
+                        <div class="side_list"><a href="{{ route('login') }}">{{$side}}</a></div>
                     @endif
                 @endforeach
             </div>

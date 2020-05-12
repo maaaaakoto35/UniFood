@@ -16,13 +16,16 @@
                 <h1>{{$result["store_jname"]}}</h1>
             </div>
 
-            <div class="rate">
-                @if ($result["rate"])
-                    <p>rate : {{$result["rate"]}}</p>
-                @else
-                    <p>rate : まだ口コミがありません</p>
-                @endif
-            </div>
+            @if ($star)
+                <div class="rate">
+                    <div class="star-rating-front" style="display: inline-block; width: {{$star}}%">★★★★★</div>
+                    <div class="star-rating-back" style="display: inline-block;">★★★★★</div>
+                </div> : {{$result["rate"]}}
+            @else
+                <div class="rate">
+                    <div class="star-rating-back" style="display: inline-block;">★★★★★</div> : まだ口コミがありません
+                </div>
+            @endif
         </div>
 
         <div class="contents">
@@ -66,7 +69,11 @@
             <h2>{{$result["store_jname"]}}の口コミ</h2>
             @foreach ($posts as $post)
                 <p>{{$post["title"]}}</p>
+                <div class="post_time">{{$post["created_at"]}}</div>
                 <p>{{$post["contents"]}}</p>
+                @if (isset($post["img_name"]))
+                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像" class="post_img">
+                @endif
             @endforeach
         </div>
     </div>

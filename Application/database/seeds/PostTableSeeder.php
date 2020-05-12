@@ -15,6 +15,7 @@ class PostTableSeeder extends Seeder
     {
         DB::table('posts')->insert([
             [
+                'name'          => 'maaaaakoto',
                 'title'         => 'title',
                 'store_name'    => 'itibariki',
                 'store_jname'   => 'はんなり食堂',

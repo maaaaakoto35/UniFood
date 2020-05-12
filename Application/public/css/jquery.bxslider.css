@@ -272,6 +272,7 @@
   }
   /* DIRECTION CONTROLS (NEXT / PREV) */
   .bx-wrapper .bx-prev {
+    display: none;
     left: 0%;
     background: url('../img/slider/controls.png') no-repeat 0 -32px;
   }
@@ -280,6 +281,7 @@
     background-position: 0 0;
   }
   .bx-wrapper .bx-next {
+    display: none;
     right: 0%;
     background: url('../img/slider/controls.png') no-repeat -43px -32px;
   }

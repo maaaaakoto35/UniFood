@@ -33,6 +33,56 @@
 	.rate input[type='radio']:checked ~ label{
 		color: #ffcc00;
 	}
+	.form_name{
+        display: inline-block;
+        position: relative;
+    }
+    .form_name input[type='text'] {
+        font: 13px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+		letter-spacing: 1px;
+		padding-left: 4em;
+    }
+    .form_name input[type='text']:focus {
+        outline: none;
+    }
+    .ef {
+        padding: 4px 0;
+        border: 0;
+        border-bottom: 1px solid #1b2538;
+        background-color: transparent;
+    }
+    .ef ~ .focus_line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: 0.4s;
+        background-color: #da3c41;
+    }
+    .ef:focus ~ .focus_line,
+    .form_name.ef ~ .focus_line {
+        width: 100%;
+        transition: 0.4s;
+    }
+    .ef ~ label {
+        position: absolute;
+        z-index: -1;
+        top: 4px;
+        left: 0;
+        width: 100%;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+        color: #aaaaaa;
+    }
+    .ef:focus ~ label, .form_name.ef ~ label {
+        font-size: 11px;
+        top: -16px;
+        transition: 0.3s;
+        color: #da3c41;
+    }
 	.form_title {
 		display: inline-block;
 		position: relative;
@@ -136,6 +186,9 @@
 	}
 	.rate{
 		display: flex;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
 		flex-direction: row-reverse;
 		justify-content: center;
 	}
@@ -163,6 +216,57 @@
 	.rate input[type='radio']:checked ~ label{
 		color: #ffcc00;
 	}
+	.form_name {
+        display: inline-block;
+		position: relative;
+		padding-left: 5%;
+    }
+    .form_name input[type='text'] {
+        font: 13px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+		letter-spacing: 1px;
+		padding-left: 4em;
+    }
+    .form_name input[type='text']:focus {
+        outline: none;
+    }
+    .ef {
+        padding: 4px 0;
+        border: 0;
+        border-bottom: 1px solid #1b2538;
+        background-color: transparent;
+    }
+    .ef ~ .name_line {
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 0;
+        height: 2px;
+        transition: 0.4s;
+        background-color: #da3c41;
+    }
+    .ef:focus ~ .name_line,
+    .form_name.ef ~ .name_line {
+        width: 100%;
+        transition: 0.4s;
+    }
+    .ef ~ label {
+        position: absolute;
+        z-index: -1;
+        top: 4px;
+        left: 0;
+        width: 100%;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+        color: #aaaaaa;
+    }
+    .ef:focus ~ label, .form_name.ef ~ label {
+        font-size: 11px;
+        top: -16px;
+        transition: 0.3s;
+        color: #da3c41;
+    }
 	.form_title {
 		display: inline-block;
 		position: relative;
@@ -250,6 +354,8 @@
 		border-top: solid 3px #00a3d4;
 		border-bottom: solid 3px #00a3d4;
 		transition: .4s;
+		-webkit-appearance: none;
+		border-radius: 0;
 	}
 	.submit_button:hover {
 		text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NOT FOUND</title>
+    <title>投稿確認</title>
     <link rel="stylesheet" href="{{ asset('css/post_confirm.css') }}">
 </head>
 <body>
@@ -25,6 +25,7 @@
                     <input type="hidden" name="form_info['rate']" value="{{$form_info['rate']}}">
                     <input type="hidden" name="form_info['storeJName']" value="{{$form_info['storeJName']}}">
                     <input type="hidden" name="form_info['storeName']" value="{{$form_info['storeName']}}">
+                    <input type="hidden" name="form_info['name']" value="{{$form_info['name']}}">
                     @if (isset($image))
                         <input type="hidden" name="image_name" value="{{$image['name']}}">
                         <input type="hidden" name="image_path" value="{{$image['path']}}">

@@ -15,7 +15,7 @@ class StoresController extends Controller
         $stores = Store::latest()->get();
         $sideList = [
             'UniFoodとは?',
-            '無料会員登録',
+            'マイページ',
             'ログイン',
             '口コミ投稿',
         ];
@@ -30,7 +30,7 @@ class StoresController extends Controller
         $stores = Store::latest()->get();
         $sideList = [
             'UniFoodとは?',
-            '無料会員登録',
+            'マイページ',
             'ログイン',
             '口コミ投稿',
         ];
@@ -49,7 +49,8 @@ class StoresController extends Controller
 
     // =========search=========
     public function search(Request $request){
-        if ($keyword = $request->input('store')) {
+error_log("!!!!!!!!!!!!!!");    
+	    if ($keyword = $request->input('store')) {
             $query = Store::query();
             $query->where('store_jname', 'like', '%'.$keyword.'%');
             $result = $query->paginate(10);
@@ -70,19 +71,6 @@ class StoresController extends Controller
         } else {
             $stores = Store::latest()->get();
             return view('search')->with('stores', $stores);
-        }
-    }
-
-    // =========link=========
-    public function link(Request $request){
-        if ($key = $request->input('key')) {
-            if ($key == 0) {
-                return view('philosophy');
-            } elseif ($key == 3) {
-                return redirect('post');
-            }
-        } else {
-            return view('not_found');
         }
     }
 
