@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Http\Middleware;
+use Closure;
+
 class RedirectToHttps
 {
     public function handle($request, Closure $next)
