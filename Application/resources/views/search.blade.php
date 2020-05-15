@@ -37,11 +37,7 @@
                                 <div class="form_text">
                                     <input type="text" name="store" class="input_text" size="60" value="{{$keyword}}"><br>
                                 </div>
-<<<<<<< HEAD
-                                <a href="{{route('search')}}"><input id="submit_button" type="submit" value="検索" class="submit_button"></a>
-=======
                                 <input id="submit_button" type="submit" value="検索" class="submit_button">
->>>>>>> 74ebf6f52a52cdc5f96b3b7f395f7d1b9dc92241
                             </form>
                         @elseif($button == 0)
                             <form action="/search" method="POST" style="display: inline-block;">
@@ -49,11 +45,7 @@
                                 <div class="form_text">
                                     <input type="text" name="menu" class="input_text" size="60" value="{{$keyword}}"><br>
                                 </div>
-<<<<<<< HEAD
-                                <a href="{{route('search')}}"><input id="submit_button" type="submit" value="検索" class="submit_button"></a>
-=======
                                 <input id="submit_button" type="submit" value="検索" class="submit_button">
->>>>>>> 74ebf6f52a52cdc5f96b3b7f395f7d1b9dc92241
                             </form>
                         @endif
                     @else
@@ -62,11 +54,7 @@
                             <div class="form_text">
                                 <input type="text" name="{{$button}}" class="input_text" size="60" value="{{$keyword}}"><br>
                             </div>
-<<<<<<< HEAD
-                            <a href="{{route('search')}}"><input id="submit_button" type="submit" value="検索" class="submit_button"></a>
-=======
                             <input id="submit_button" type="submit" value="検索" class="submit_button">
->>>>>>> 74ebf6f52a52cdc5f96b3b7f395f7d1b9dc92241
                         </form>
                     </div>
                     @endif
