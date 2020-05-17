@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>会員登録</title>
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
-    <script src="{{ asset('js/jquery.validationEngine.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.validationEngine.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.validationEngine-ja.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/validationEngine.jquery.css') }}">
