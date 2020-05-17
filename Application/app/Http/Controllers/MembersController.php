@@ -15,8 +15,7 @@ class MembersController extends Controller
         if (session()->has('member_id')) {
             return redirect()->route('index');
         } else {
-            $members = Member::latest()->get();
-            return view('signup')->with('members', $members);
+            return view('signup');
         }
     }
 
@@ -46,6 +45,16 @@ class MembersController extends Controller
             $instance['studentNumber'] = $request->input('student_number');
             $instance['password'] = $request->input('password');
             $instance['image'] = $request->file('image');
+
+            if (isset($instance['name'])) {
+                $membersName = Member::latest()->get()->name;
+                foreach ($membersName as $key => $name) {
+                    if ($name == $instance['name']) {
+                        $request->session()->flash('message', $instance['name'].'は既に存在しているユーザーです。');
+                        return view('signup');
+                    }
+                }
+            }
 
             DB::beginTransaction();
             try {
