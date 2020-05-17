@@ -43,7 +43,7 @@
                     <span class="focus_line"></span>
                 </div><br><br>
                 <div class="form">
-                    <input class="ef validate[required,custom[number]]" size="6" type="text" placeholder="学籍番号(半角英数)" name="student_number">
+                    <input class="ef validate[required,custom[number],justSize[6]]" size="6" type="text" placeholder="学籍番号(半角英数)" name="student_number">
                     <label></label>
                     <span class="focus_line"></span>
                 </div><br><br>
