@@ -639,6 +639,9 @@
 					case "maxSize":
 						errorMsg = methods._getErrorMessage(form, field, rules[i], rules, i, options, methods._maxSize);
 						break;
+					case "justSize":
+						　　　　　　errorMsg = methods._getErrorMessage(form, field, rules[i], rules, i, options, methods._justSize);
+						　　　　　　break;
 					case "min":
 						errorMsg = methods._getErrorMessage(form, field, rules[i], rules, i, options, methods._min);
 						break;
@@ -929,6 +932,7 @@
 			 "ajax": "custom-error",
 			 "minSize": "range-underflow",
 			 "maxSize": "range-overflow",
+			 "justSize": "range-underoverflow",
 			 "min": "range-underflow",
 			 "max": "range-overflow",
 			 "past": "type-mismatch",
@@ -1150,6 +1154,25 @@
 				return rule.alertText + min + rule.alertText2;
 			}
 		},
+		/**
+		* Check number justSize value
+		*
+		* @param {jqObject} field
+		* @param {Array[String]} rules
+		* @param {int} i rules index
+		* @param {Map}
+		*            user options
+		* @return an error string if validation failed
+		*/
+		_justSize: function(field, rules, i, options) {
+			var just = rules[i + 1];
+			   var len = field.val().length;
+
+			  if (len != just) {
+				 var rule = options.allrules.justSize;
+				  return rule.alertText + just + rule.alertText2;
+			}
+	   },
 		/**
 		* Check number minimum value
 		*

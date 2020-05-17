@@ -28,6 +28,11 @@
                     "alertText": "* ",
                     "alertText2": "文字以上にしてください"
                 },
+                "justSize":{
+                    "regex": "none",
+                    "alertText": "* ",
+                    "alertText2": "文字にしてください"
+                },
 				"groupRequired": {
                     "regex": "none",
                     "alertText": "* You must fill one of the following fields"
