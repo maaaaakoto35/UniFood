@@ -33,12 +33,12 @@
             <form action="/signup" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form">
-                    <input class="ef validate[required]" size="50" type="text" placeholder="名前" name="name">
+                    <input class="ef validate[required]" size="50" type="text" placeholder="名前" name="name" data-prompt-position="topLeft">
                     <label></label>
                     <span class="focus_line"></span>
                 </div><br><br>
                 <div class="form">
-                    <input class="ef validate[custom[email]]" size="50" type="text" placeholder="メールアドレス" name="e-mail">
+                    <input class="ef validate[required,custom[email]]" size="50" type="text" placeholder="メールアドレス" name="e-mail" data-prompt-position="topLeft">
                     <label></label>
                     <span class="focus_line"></span>
                 </div><br><br>
