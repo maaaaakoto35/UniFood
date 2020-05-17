@@ -47,9 +47,9 @@ class MembersController extends Controller
             $instance['image'] = $request->file('image');
 
             if (isset($instance['name'])) {
-                $membersName = Member::latest()->get()->name;
-                foreach ($membersName as $key => $name) {
-                    if ($name == $instance['name']) {
+                $members = Member::latest()->get();
+                foreach ($members as $key => $member) {
+                    if ($member['name'] == $instance['name']) {
                         $request->session()->flash('message', $instance['name'].'は既に存在しているユーザーです。');
                         return view('signup');
                     }
