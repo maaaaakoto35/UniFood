@@ -56,7 +56,7 @@
                 <input type="text" size="50" name="e-mail" placeholder="メールアドレス">
                 <input type="text" size="6" name="student_number" placeholder="学籍番号(半角英数)">
                 <input type="password" size="30" name="password" placeholder="パスワード"> --}}
-                <input type="file validate[]" name="image" class="form-control">
+                <input type="file" name="image" class="form-control">
                 <input type="submit" class="submit_button" value="登録">
             </form>
         </div>
