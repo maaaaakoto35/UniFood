@@ -87,6 +87,22 @@
                 <img src="img/foods/food9.jpg" alt="">
             </div>
 
+            <div class="map">
+                <img src="img/campas_food_map.JPG" usemap="#ImageMap" alt="" class="food_map"/>
+                <map name="ImageMap">
+                <area shape="rect" coords="240,282,336,332" href="{{ route('furusato') }}" alt="" />
+                <area shape="rect" coords="317,61,395,123"  href="{{ route('hannnari') }}" alt="" />
+                <area shape="rect" coords="486,67,561,109"  href="{{ route('musubi') }}" alt="" />
+                <area shape="rect" coords="454,313,515,351" href="{{ route('itibariki') }}" alt="" />
+                <area shape="rect" coords="528,263,574,306" href="{{ route('cosmic') }}" alt="" />
+                <area shape="rect" coords="599,273,646,322" href="{{ route('fujikatu') }}" alt="" />
+                <area shape="rect" coords="677,265,743,307" href="{{ route('familymart') }}" alt="" />
+                <area shape="rect" coords="643,338,730,373" href="{{ route('babyface') }}" alt="" />
+                <area shape="rect" coords="593,405,669,458" href="{{ route('libre') }}" alt="" />
+                <area shape="rect" coords="471,382,539,441" href="{{ route('miyako') }}" alt="" />
+                </map>
+            </div>
+
             {{-- 食堂の表示 --}}
             {{-- <div class="show_stores">
                 @foreach ($stores as $key => $store)

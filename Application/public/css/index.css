@@ -88,6 +88,10 @@
     display: inline-block;
     height: auto;
   }
+  .food_map {
+    width: 100%;
+    height: auto;
+  }
   .side {
     width: 18%;
     float: right;
@@ -193,6 +197,10 @@
   }
   .slider {
     display: block;
+  }
+  .food_map {
+    width: 100%;
+    height: auto;
   }
   .side {
     text-align: center;
