@@ -29,18 +29,18 @@ Route::get('/signup',        'MembersController@indexSignUp')->name('signup');
 Route::post('/signup',       'MembersController@signUp');
 Route::get('/my_page',       'MembersController@myPage')->name('my_page');
 
-Route::view('/philosophy', 'philosophy')->name('philosophy');
-Route::view('/not_found',  'not_found')->name('not_found');
-Route::view('/furusato',   'furusato')->name('furusato');
-Route::view('/hannnari',   'hannnari')->name('hannnari');
-Route::view('/musubi',     'musubi')->name('musubi');
-Route::view('/itibariki',  'itibariki')->name('itibariki');
-Route::view('/cosmic',     'cosmic')->name('cosmic');
-Route::view('/fujikatu',   'fujikatu')->name('fujikatu');
-Route::view('/familymart', 'familymart')->name('familymart');
-Route::view('/babyface',   'babyface')->name('babyface');
-Route::view('/libre',      'libre')->name('libre');
-Route::view('/miyako',     'miyako')->name('miyako');
+// Route::view('/philosophy', 'philosophy')->name('philosophy');
+// Route::view('/not_found',  'not_found')->name('not_found');
+// Route::view('/furusato',   'furusato')->name('furusato');
+// Route::view('/hannnari',   'detail/hannnari')->name('hannnari');
+// Route::view('/musubi',     'musubi')->name('musubi');
+// Route::view('/itibariki',  'itibariki')->name('itibariki');
+// Route::view('/cosmic',     'cosmic')->name('cosmic');
+// Route::view('/fujikatu',   'fujikatu')->name('fujikatu');
+// Route::view('/familymart', 'familymart')->name('familymart');
+// Route::view('/babyface',   'babyface')->name('babyface');
+// Route::view('/libre',      'libre')->name('libre');
+// Route::view('/miyako',     'miyako')->name('miyako');
 
 Route::view('/log_in', 'log_in');
 

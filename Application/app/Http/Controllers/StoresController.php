@@ -49,7 +49,6 @@ class StoresController extends Controller
 
     // =========search=========
     public function search(Request $request){
-error_log("!!!!!!!!!!!!!!");    
 	    if ($keyword = $request->input('store')) {
             $query = Store::query();
             $query->where('store_jname', 'like', '%'.$keyword.'%');
