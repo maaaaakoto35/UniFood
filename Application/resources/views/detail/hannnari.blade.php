@@ -28,7 +28,7 @@
                 </div>
             @endif
         </div>
-       
+
        <div class="tab-panel">
             <ul class="tabs-group">
                 <li class="tab tab-A is-active">はんなり食堂</li>
@@ -78,6 +78,11 @@
                             <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像">
                         @endif
                     @endforeach
+                </div>
+
+                <div class="panel tab-C" style="text-align:center">
+                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPG') }}" width="280" height="210" alt="logo">
+                    エレベーターを2回登った後、10号館1階にあります。
                 </div>
             </div>
         </div>
