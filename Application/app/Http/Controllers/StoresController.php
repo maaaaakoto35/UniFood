@@ -49,11 +49,7 @@ class StoresController extends Controller
 
     // =========search=========
     public function search(Request $request){
-<<<<<<< HEAD
-        if ($keyword = $request->input('store')) {
-=======
 	    if ($keyword = $request->input('store')) {
->>>>>>> charging/fujiwara
             $query = Store::query();
             $query->where('store_jname', 'like', '%'.$keyword.'%');
             $result = $query->paginate(10);

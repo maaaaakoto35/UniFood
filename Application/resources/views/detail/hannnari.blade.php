@@ -80,10 +80,10 @@
                     @endforeach
                 </div>
 
-                <div class="panel tab-C" style="text-align:center">
-                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPG') }}" width="280" height="210" alt="logo">
+                {{-- <div class="panel tab-D" style="text-align:center">
+                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" width="280" height="210" alt="logo">
                     エレベーターを2回登った後、10号館1階にあります。
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
