@@ -34,6 +34,7 @@
                 <li class="tab tab-A is-active">はんなり食堂</li>
                 <li class="tab tab-B">メニュー</li>
                 <li class="tab tab-C">口コミ</li>
+                <li class="tab tab-D">イメージマップ</li>
             </ul>
 
             <div class="panel-group">
@@ -54,6 +55,11 @@
                             <tr>営業時間: {{$result["open_time"]}} </tr>
                         </table><br><br>
                         <li>
+                            <table>
+                                <tr>ジャンル: {{$result["genre"]}} </tr>
+                                <tr>価格帯: {{$result["price"]}} </tr>
+                                <tr>営業時間: {{$result["open_time"]}} </tr>
+                            </table><br><br>
                             低価格でボリュームある定食が人気の食堂。<br>
                             日替りランチのバリエーションも<br>
                             豊富で、カレー、丼物、麺類の品揃えも充実。<br>
@@ -79,6 +85,8 @@
                         @endif
                     @endforeach
                 </div>
+
+                <div class="panel tab-D">コンテンツ</div>
             </div>
         </div>
     </div>
