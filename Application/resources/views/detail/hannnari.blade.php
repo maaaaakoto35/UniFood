@@ -49,17 +49,12 @@
                         <img src="img/foods/food7.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food8.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food9.jpg" width="240" height="180" alt=""> --}}
-                        <table>
-                            <tr>ジャンル: {{$result["genre"]}} </tr>
-                            <tr>価格帯: {{$result["price"]}} </tr>
-                            <tr>営業時間: {{$result["open_time"]}} </tr>
-                        </table><br><br>
                         <li>
                             <table>
                                 <tr>ジャンル: {{$result["genre"]}} </tr>
                                 <tr>価格帯: {{$result["price"]}} </tr>
                                 <tr>営業時間: {{$result["open_time"]}} </tr>
-                            </table><br><br>
+                            </table><br>
                             低価格でボリュームある定食が人気の食堂。<br>
                             日替りランチのバリエーションも<br>
                             豊富で、カレー、丼物、麺類の品揃えも充実。<br>
