@@ -96,13 +96,11 @@
     .star-rating-back {
         color: #ccc;
     }
-
     .tabs-group{
         display: flex;
         justify-content: center;
         padding: 0em;
     }
-
     .tab{
         flex-grow: 1;
         padding:5px;
@@ -112,25 +110,24 @@
         cursor:pointer;
         font-size: 12px;
     }
-
     .panel-group{
         height: auto;
         border:solid 1px black;
         border-top:none;
         background:white;
     }
-
     .panel{
         display:none;
     }
-
     .tab.is-active{
         background:#333;
         color:#FFF;
         transition: all 0.2s ease-out;
     }
-
     .panel.is-show{
         display:block;
+    }
+    .slider {
+        text-align: center;
     }
   }

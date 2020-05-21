@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="panel tab-C">
-                    @if ($posts)
+                    @if (isset($posts))
                         @foreach ($posts as $post)
                             <p>{{$post["title"]}}</p>
                             <p>{{$post["contents"]}}</p>
@@ -94,8 +94,9 @@
                 </div>
 
                 <div class="panel tab-D">
-                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" alt="logo">
-                    2つのエレベーターを上り10号館の1階にあります。
+                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" width="100%" alt="logo">
+                    2つのエレベーターを上り、<br>
+                    10号館の1階東側にあります。
                 </div>
             </div>
         </div>
