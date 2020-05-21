@@ -100,6 +100,7 @@
     .tabs-group{
         display: flex;
         justify-content: center;
+        padding: 0em;
     }
 
     .tab{
@@ -109,35 +110,18 @@
         border:solid 1px #CCC;
         text-align:center;
         cursor:pointer;
+        font-size: 12px;
     }
 
     .panel-group{
-        width: 100%;
         height: auto;
-        border:solid 3px black;
+        border:solid 1px black;
         border-top:none;
         background:white;
     }
 
     .panel{
         display:none;
-    }
-
-    .panel.tab-A ul {
-        display: flex;
-        list-style: none;
-    }
-
-    .panel.tab-A img {
-        width: 30%;
-        height: 30%;
-    }
-
-    .panel.tab-A li {
-        font-size: 20px;
-        line-height: 2;
-        margin: 0;
-        margin-left: 50px;
     }
 
     .tab.is-active{

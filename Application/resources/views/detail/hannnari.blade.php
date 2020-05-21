@@ -39,8 +39,8 @@
 
             <div class="panel-group">
                 <div class="panel tab-A is-show">
-                    <ul>
-                        <img src="{{ asset('img/'.$result["store_name"].'/Shokudo.jpg') }}" width="280" height="210" alt="logo">
+                    <div class="slider">
+                        <img src="{{ asset('img/'.$result["store_name"].'/Shokudo.jpg') }}" alt="logo">
                         {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food3.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food4.jpg" width="240" height="180" alt="">
@@ -49,39 +49,54 @@
                         <img src="img/foods/food7.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food8.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food9.jpg" width="240" height="180" alt=""> --}}
-                        <li>
-                            <table>
-                                <tr>ジャンル: {{$result["genre"]}} </tr>
-                                <tr>価格帯: {{$result["price"]}} </tr>
-                                <tr>営業時間: {{$result["open_time"]}} </tr>
-                            </table><br>
-                            低価格でボリュームある定食が人気の食堂。<br>
-                            日替りランチのバリエーションも<br>
-                            豊富で、カレー、丼物、麺類の品揃えも充実。<br>
-                            味と量に大満足です。うどん安すぎ<br>
-                        </li>
-                    </ul>
+                    </div>
+
+                    <div class="detail">
+                        <table>
+                            <tr>ジャンル: {{$result["genre"]}} </tr>
+                            <tr>価格帯: {{$result["price"]}} </tr>
+                            <tr>営業時間: {{$result["open_time"]}} </tr>
+                        </table><br>
+                        低価格でボリュームある定食が人気の食堂。<br>
+                        日替りランチのバリエーションも<br>
+                        豊富で、カレー、丼物、麺類の品揃えも充実。<br>
+                        味と量に大満足です。うどん安すぎ<br>
+                    </div>
                 </div>
 
                 <div class="panel tab-B">
-                    @foreach ($menus as &$menu)
-                        <span>{{$menu["food_name"]}}</span>
-                        <span>{{$menu["price"]}}円</span>
-                    @endforeach
+                    <table>
+                        @foreach ($menus as &$menu)
+                            <tr>
+                                <td width="50%">
+                                    <span>{{$menu["food_name"]}}</span>
+                                </td>
+                                <td width="50%">
+                                    <span>{{$menu["price"]}}円</span><br>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
 
                 <div class="panel tab-C">
-                    <h2>{{$result["store_jname"]}}の口コミ</h2>
-                    @foreach ($posts as $post)
-                        <p>{{$post["title"]}}</p>
-                        <p>{{$post["contents"]}}</p>
-                        @if (isset($post["img_name"]))
-                            <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像">
-                        @endif
-                    @endforeach
+                    @if ($posts)
+                        @foreach ($posts as $post)
+                            <p>{{$post["title"]}}</p>
+                            <p>{{$post["contents"]}}</p>
+                            @if (isset($post["img_name"]))
+                                <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像">
+                            @endif
+                        @endforeach
+                    @else
+                        まだ口コミがありません。
+                    @endif
                 </div>
 
-                <div class="panel tab-D">コンテンツ</div>
+                <div class="panel tab-D">
+                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" alt="logo">
+                    2つのエレベーターを上り10号館の1階にあります。
+                </div>
             </div>
         </div>
     </div>
