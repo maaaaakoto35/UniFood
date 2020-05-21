@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Cafeteria</title>
-    <link rel="stylesheet" href="/detail/?value= asset('css/index.css') }}">
-    <link rel="stylesheet" href="/detail/?value= asset('css/jquery.bxslider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.bxslider.js') }}"></script>
 
