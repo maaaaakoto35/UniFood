@@ -53,9 +53,18 @@
 
                     <div class="detail">
                         <table>
-                            <tr>ジャンル: {{$result["genre"]}} </tr>
-                            <tr>価格帯: {{$result["price"]}} </tr>
-                            <tr>営業時間: {{$result["open_time"]}} </tr>
+                            <tr>
+                                <td width="25%">ジャンル:</td>
+                                <td width="75%">{{$result["genre"]}}</td>
+                            </tr>
+                            <tr>
+                                <td width="25%">価格帯:</td>
+                                <td width="75%">{{$result["price"]}}</td>
+                            </tr>
+                            <tr>
+                                <td width="25%">営業時間:</td>
+                                <td width="75%">{{$result["open_time"]}}</td>
+                            </tr>
                         </table><br>
                         低価格でボリュームある定食が人気の食堂。<br>
                         日替りランチのバリエーションも<br>
@@ -82,11 +91,14 @@
                 <div class="panel tab-C">
                     @if (isset($posts))
                         @foreach ($posts as $post)
-                            <p>{{$post["title"]}}</p>
-                            <p>{{$post["contents"]}}</p>
-                            @if (isset($post["img_name"]))
-                                <img src="{{ asset($post["img_path"].$post["img_name"]) }}" alt="口コミの画像">
-                            @endif
+                            <div class="post">
+                                <span class="post_name">{{$post["name"]}}さんの投稿</span><br>
+                                <span class="post_title">{{$post["title"]}}</span><br>
+                                <span class="post_contents">{{$post["contents"]}}</span><br>
+                                @if (isset($post["img_name"]))
+                                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" width="80%" alt="口コミの画像">
+                                @endif
+                            </div><br>
                         @endforeach
                     @else
                         まだ口コミがありません。

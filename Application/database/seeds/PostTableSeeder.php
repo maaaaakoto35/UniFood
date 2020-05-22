@@ -18,7 +18,7 @@ class PostTableSeeder extends Seeder
                 'name'          => 'maaaaakoto',
                 'title'         => 'title',
                 'store_name'    => 'itibariki',
-                'store_jname'   => 'はんなり食堂',
+                'store_jname'   => '壱馬力',
                 'contents'      => '本文',
                 'rate'          => 3,
             ]

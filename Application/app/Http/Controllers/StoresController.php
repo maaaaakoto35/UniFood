@@ -5,13 +5,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use App\Store;
 use App\Menu;
+use App\Access;
 
 class StoresController extends Controller
 {
     // =========index=========
     public function index(){
+        if (!session()->has('visit')) {
+            try {
+                DB::beginTransaction();
+                $ipAdress = Request::ip();
+                $instance = new Access;
+                $instance->create([
+                    'ip_adress' => $ipAdress,
+                ]);
+                session(['visit' => $ipAdress]);
+                DB::commit();
+            } catch (\Exception $th) {
+                DB::rollback();
+            }
+        }
         $stores = Store::latest()->get();
         $sideList = [
             'UniFoodとは?',
