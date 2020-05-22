@@ -96,7 +96,7 @@
                                 <span class="post_title">{{$post["title"]}}</span>
                                 <span class="post_rate">
                                     <div class="rate">
-                                        <div class="star-rating-front" style="display: inline-block; width: {{$post['rate']}}%">★★★★★</div>
+                                        <div class="star-rating-front" style="display: inline-block; width: {{$post['star']}}%">★★★★★</div>
                                         <div class="star-rating-back" style="display: inline-block;">★★★★★</div>
                                     </div> : {{$post["rate"]}}
                                 </span><br>

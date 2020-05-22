@@ -24,6 +24,13 @@ class DetailsController extends Controller
                 $star = $result["rate"] * 20;
             }
 
+            //postのrateを百分率に変換
+            if (isset($posts)) {
+                foreach ($posts as &$val) {
+                    $val['star'] = $val["rate"] * 20;
+                }
+            }
+
             return view($view)->with('result', $result)
                               ->with('posts',  $posts)
                               ->with('star',  $star)
