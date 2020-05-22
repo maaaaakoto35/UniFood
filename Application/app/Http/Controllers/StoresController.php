@@ -37,7 +37,7 @@ class StoresController extends Controller
         }
         $stores = Store::latest()->get();
         $sideList = [
-            'UniFoodとは?',
+            'Contact',
             'マイページ',
             'ログイン',
             '口コミ投稿',
@@ -52,7 +52,7 @@ class StoresController extends Controller
     public function isStore(Request $request){
         $stores = Store::latest()->get();
         $sideList = [
-            'UniFoodとは?',
+            'Contact?',
             'マイページ',
             'ログイン',
             '口コミ投稿',
