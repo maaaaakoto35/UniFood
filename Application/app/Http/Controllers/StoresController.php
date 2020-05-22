@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Store;
 use App\Menu;
+use App\Member;
 use App\Access;
 
 class StoresController extends Controller
@@ -17,12 +18,18 @@ class StoresController extends Controller
         if (!session()->has('visit')) {
             try {
                 DB::beginTransaction();
-                $ipAdress = Request::ip();
+                $name = '';
+                if (session()->has('member_id')) {
+                    $member = Member::where('member_id', session('member_id', null));
+                    $name = $member['name'];
+                } else {
+                    $name = 'no_name';
+                }
                 $instance = new Access;
                 $instance->create([
-                    'ip_adress' => $ipAdress,
+                    'name' => $name,
                 ]);
-                session(['visit' => $ipAdress]);
+                session(['visit' => true]);
                 DB::commit();
             } catch (\Exception $th) {
                 DB::rollback();

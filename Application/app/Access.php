@@ -8,5 +8,5 @@ class Access extends Model
 {
     protected $table = 'menus';
 
-    protected $fillable = ['ip_adress'];
+    protected $fillable = ['name'];
 }
