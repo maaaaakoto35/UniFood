@@ -74,7 +74,7 @@
                     @endif
                 </div>
             </div>
-            <div style="text-align:center; font-color:red; font-size:12px;">※空白で検索は店舗一覧が見れます。</div><br>
+            <div style="text-align:center; color:red; font-size:12px;">※空白で検索は店舗一覧が見れます。</div><br>
 
             <div class="slider">
                 <img src="img/foods/food1.jpg" alt="">
