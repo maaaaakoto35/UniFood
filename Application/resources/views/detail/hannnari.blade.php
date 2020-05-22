@@ -7,6 +7,20 @@
     <title>はんなり食堂</title>
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
     <script type="text/javascript" src="{{ asset('js/detail.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.bxslider.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 5000,
+                touchEnabled: true,
+                centerMode: true,
+                centerPadding: '10%'
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -41,6 +55,9 @@
                 <div class="panel tab-A is-show">
                     <div class="slider">
                         <img src="{{ asset('img/'.$result["store_name"].'/Shokudo.jpg') }}" alt="logo">
+                        <img src="{{ asset('img/'.$result["store_name"].'/food<1>.jpg') }}" alt="logo">
+                        <img src="{{ asset('img/'.$result["store_name"].'/food<2>.jpg') }}" alt="logo">
+                        <img src="{{ asset('img/'.$result["store_name"].'/food<3>.jpg') }}" alt="logo">
                         {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food3.jpg" width="240" height="180" alt="">
                         <img src="img/foods/food4.jpg" width="240" height="180" alt="">
