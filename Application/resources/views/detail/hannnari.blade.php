@@ -58,14 +58,6 @@
                         <img src="{{ asset('img/'.$result["store_name"].'/food<1>.jpg') }}" alt="logo">
                         <img src="{{ asset('img/'.$result["store_name"].'/food<2>.jpg') }}" alt="logo">
                         <img src="{{ asset('img/'.$result["store_name"].'/food<3>.jpg') }}" alt="logo">
-                        {{-- <img src="img/foods/food2.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food3.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food4.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food5.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food6.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food7.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food8.jpg" width="240" height="180" alt="">
-                        <img src="img/foods/food9.jpg" width="240" height="180" alt=""> --}}
                     </div>
 
                     <div class="detail">
