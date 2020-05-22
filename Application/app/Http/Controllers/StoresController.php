@@ -92,7 +92,10 @@ class StoresController extends Controller
                                  ->with('button', 0);
         } else {
             $stores = Store::latest()->get();
-            return view('search')->with('stores', $stores);
+            return view('search')->with('result', $stores)
+                                 ->with('keyword', '　')
+                                 ->with('button', 1)
+                                 ->with('amount', count($stores));
         }
     }
 
