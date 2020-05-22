@@ -131,7 +131,20 @@
         text-align: center;
     }
     .post {
+        text-align: left;
+        background-color: rgb(243, 243, 243);
+    }
+    .post_name {
+        font-size: 13px;
+    }
+    .post_title {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    .post_img {
         text-align: center;
-        background-color: #ccc;
+    }
+    .map {
+        text-align: center;
     }
   }

@@ -92,11 +92,19 @@
                     @if (isset($posts))
                         @foreach ($posts as $post)
                             <div class="post">
-                                <span class="post_name">{{$post["name"]}}さんの投稿</span><br>
-                                <span class="post_title">{{$post["title"]}}</span><br>
+                                <span class="post_name"><span style="color:deepskyblu;">{{$post["name"]}}</span>さんの投稿</span><br>
+                                <span class="post_title">{{$post["title"]}}</span>
+                                <span class="post_rate">
+                                    <div class="rate">
+                                        <div class="star-rating-front" style="display: inline-block; width: {{$post['rate']}}%">★★★★★</div>
+                                        <div class="star-rating-back" style="display: inline-block;">★★★★★</div>
+                                    </div> : {{$post["rate"]}}
+                                </span><br>
                                 <span class="post_contents">{{$post["contents"]}}</span><br>
                                 @if (isset($post["img_name"]))
-                                    <img src="{{ asset($post["img_path"].$post["img_name"]) }}" width="80%" alt="口コミの画像">
+                                    <span class="post_img">
+                                        <img src="{{ asset($post["img_path"].$post["img_name"]) }}" width="80%" alt="口コミの画像">
+                                    </span>
                                 @endif
                             </div><br>
                         @endforeach
@@ -106,7 +114,9 @@
                 </div>
 
                 <div class="panel tab-D">
-                    <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" width="100%" alt="logo">
+                    <div class="map">
+                        <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" width="98%" alt="logo">
+                    </div>
                     2つのエレベーターを上り、<br>
                     10号館の1階東側にあります。
                 </div>

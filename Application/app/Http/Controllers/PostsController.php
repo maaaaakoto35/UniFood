@@ -72,7 +72,7 @@ class PostsController extends Controller
                     } else {
                         self::createPost($formInfo[$keys[1]], $formInfo[$keys[5]], $formInfo[$keys[4]], $formInfo[$keys[2]], $formInfo[$keys[3]], $formInfo[$keys[6]]);
                     }
-                    self::updateRate($formInfo[$keys[3]]);
+                    self::updateRate($formInfo[$keys[0]]);
                     DB::commit();
                     session()->forget('form_info');
                     $request->session()->regenerateToken();
