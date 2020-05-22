@@ -15,7 +15,7 @@ class AccessTable extends Migration
     {
         //tableの作成
         Schema::create('access', function (Blueprint $table) {
-            $table->integer('ip_adress'); //訪問者のipアドレス
+            $table->string('ip_adress'); //訪問者のipアドレス
             $table->timestamps();
         });
     }
