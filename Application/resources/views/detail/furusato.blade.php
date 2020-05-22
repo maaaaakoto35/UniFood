@@ -124,7 +124,7 @@
 
                 <div class="panel tab-D">
                     <div class="map">
-                        <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" width="98%" alt="logo">
+                        <img src="{{ asset('img/'.$result["store_name"].'/map.JPG') }}" width="98%" alt="logo">
                     </div>
                     神山ホール4階にあり、エレベーターの横の階段を上るとある。
                 </div>

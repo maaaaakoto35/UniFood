@@ -132,7 +132,7 @@
 
                 <div class="panel tab-D">
                     <div class="map">
-                        <img src="{{ asset('img/'.$result["store_name"].'/map.JPEG') }}" width="98%" alt="logo">
+                        <img src="{{ asset('img/'.$result["store_name"].'/map.JPG') }}" width="98%" alt="logo">
                     </div>
                     食堂が多くある並楽館4階にあります。<br>
                     長い階段を登った先に美味しいご飯が。
