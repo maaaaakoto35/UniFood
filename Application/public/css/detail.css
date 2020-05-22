@@ -1,0 +1,150 @@
+@media screen and (min-width:501px) {
+    /*pc用のcssを記述*/
+    .wrapper {
+        margin: 0% 10% 0% 10%;
+        flex-direction: column;
+    }
+
+    .store_title {
+        display: inline-block;
+    }
+    .rate {
+        display: inline-block;
+        position: relative;
+    }
+    .star-rating-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #ffcc33;
+    }
+    .star-rating-back {
+        color: #ccc;
+    }
+
+    .tabs-group{
+        display: flex;
+        justify-content: center;
+    }
+
+    .tab{
+        flex-grow: 1;
+        padding:5px;
+        list-style:none;
+        border:solid 1px #CCC;
+        text-align:center;
+        cursor:pointer;
+    }
+
+    .panel-group{
+        width: 100%;
+        height: auto;
+        border:solid 3px black;
+        border-top:none;
+        background:white;
+    }
+
+    .panel{
+        display:none;
+    }
+
+    .panel.tab-A ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .panel.tab-A img {
+        width: 30%;
+        height: 30%;
+    }
+
+    .panel.tab-A li {
+        font-size: 20px;
+        line-height: 2;
+        margin: 0;
+        margin-left: 50px;
+    }
+
+    .tab.is-active{
+        background:#333;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+    }
+
+    .panel.is-show{
+        display:block;
+    }
+}
+
+@media screen and (max-width:500px) {
+    /*スマホ用のcssを記述*/
+    .wrapper {
+        overflow: hidden;
+    }
+    .rate {
+        display: inline-block;
+        position: relative;
+    }
+    .star-rating-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #ffcc33;
+    }
+    .star-rating-back {
+        color: #ccc;
+    }
+    .tabs-group{
+        display: flex;
+        justify-content: center;
+        padding: 0em;
+    }
+    .tab{
+        flex-grow: 1;
+        padding:5px;
+        list-style:none;
+        border:solid 1px #CCC;
+        text-align:center;
+        cursor:pointer;
+        font-size: 12px;
+    }
+    .panel-group{
+        height: auto;
+        border:solid 1px black;
+        border-top:none;
+        background:white;
+    }
+    .panel{
+        display:none;
+    }
+    .tab.is-active{
+        background:#333;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+    }
+    .panel.is-show{
+        display:block;
+    }
+    .slider {
+        text-align: center;
+    }
+    .post {
+        text-align: left;
+        background-color: rgb(247, 247, 247);
+    }
+    .post_name {
+        font-size: 13px;
+    }
+    .post_title {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    .post_img {
+        text-align: center;
+    }
+    .map {
+        text-align: center;
+    }
+  }

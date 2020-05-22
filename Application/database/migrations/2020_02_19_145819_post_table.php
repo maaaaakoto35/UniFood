@@ -18,7 +18,7 @@ class PostTable extends Migration
             $table->increments('id'); //口コミのid(auto)
             $table->string('title', 20); //タイトル
             $table->string('content', 200); //本文
-            $table->string('file_name', 40); //画像ファイルのファイル名
+            $table->string('file_name', 40)->nullable(); //画像ファイルのファイル名
             $table->string('store'); //食堂
             $table->timestamps();
         });

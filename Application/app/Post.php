@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use PhpParser\Node\Expr\Cast\String_;
 
 class Post extends Model
 {
-    protected $table = 'store';
+    protected $table = 'posts';
 
-    protected $fillable = ['title', 'content', 'file_name', 'store'];
+    protected $fillable = ['name', 'title', 'store_name', 'store_jname', 'contents', 'rate', 'img_name', 'img_path'];
 }

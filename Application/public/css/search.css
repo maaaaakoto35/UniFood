@@ -1,0 +1,201 @@
+@media screen and (min-width:501px) {
+    /*pc用のcssを記述*/
+    .wrapper {
+        margin: 0% 20% 0% 20%;
+        flex-direction: column;
+    }
+    .search {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 70px;
+    }
+    .search_button {
+        display: inline-block;
+    }
+    .search_form {
+        display: inline-block;
+    }
+    .input_text {
+        display: inline-block;
+        height: 50px;
+        font-size: large;
+    }
+    .submit_button {
+        position: relative;
+        width: 58px;
+        height: 35px;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFF;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+        padding: 0.3em 0.5em;
+        background: #00bcd4;
+        border-top: solid 3px #00a3d4;
+        border-bottom: solid 3px #00a3d4;
+        transition: .4s;
+    }
+    .submit_button:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                     6px 0px 15px rgba(255, 255, 240, 0.83);
+    }
+    .store_button {
+        position: relative;
+        height: 29px;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFF;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+        padding: 0.3em 0.5em;
+        background: #00bcd4;
+        border-top: solid 3px #00a3d4;
+        border-bottom: solid 3px #00a3d4;
+        transition: .4s;
+      }
+    .store_button:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                    6px 0px 15px rgba(255, 255, 240, 0.83);
+    }
+    .food_button {
+        position: relative;
+        height: 29px;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFF;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+        padding: 0.3em 0.5em;
+        background: #00bcd4;
+        border-top: solid 3px #00a3d4;
+        border-bottom: solid 3px #00a3d4;
+        transition: .4s;
+    }
+    .food_button:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                    6px 0px 15px rgba(255, 255, 240, 0.83);
+    }
+    .form_text {
+        display: inline-block;
+        height: 38px;
+    }
+    .form_button {
+        display: inline-block;
+        height: auto;
+    }
+    a {
+        color: black;
+        text-decoration:none;
+    }
+    .amount {
+        text-align: center
+    }
+    .result {
+        display: inline-block;
+        width: 60%;
+        right: 20%;
+    }
+}
+@media screen and (max-width:500px) {
+    /*スマホ用のcssを記述*/
+    .wrapper {
+        overflow: hidden;
+    }
+    .search {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .search_button {
+        width: 15%;
+        padding: 0% 2.5% 0% 12%;
+        display: inline-block;
+    }
+    .store_button {
+        position: relative;
+        height: 29px;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFF;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+        padding: 0.3em 0.5em;
+        background: #00bcd4;
+        border-top: solid 3px #00a3d4;
+        border-bottom: solid 3px #00a3d4;
+        transition: .4s;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    .store_button:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                        6px 0px 15px rgba(255, 255, 240, 0.83);
+    }
+    .food_button {
+        position: relative;
+        height: 29px;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFF;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+        padding: 0.3em 0.5em;
+        background: #00bcd4;
+        border-top: solid 3px #00a3d4;
+        border-bottom: solid 3px #00a3d4;
+        transition: .4s;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    .food_button:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                        6px 0px 15px rgba(255, 255, 240, 0.83);
+    }
+    .search_form {
+        display: inline-block;
+        text-align: left;
+    }
+    .form_text {
+        display: inline-block;
+        width: 60%;
+    }
+    .input_text {
+        display: inline-block;
+        width: 100%;
+        font-size: large;
+        height: 52px;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        -webkit-box-sizing:border-box; /* Chrome, Safari */
+    }
+    .submit_button {
+        position: relative;
+        width: 58px;
+        height: 35px;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFF;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+        padding: 0.3em 0.5em;
+        background: #00bcd4;
+        border-top: solid 3px #00a3d4;
+        border-bottom: solid 3px #00a3d4;
+        transition: .4s;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    .submit_button:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                        6px 0px 15px rgba(255, 255, 240, 0.83);
+    }
+    a {
+        color: black;
+        text-decoration:none;
+    }
+    .amount {
+        text-align: center
+    }
+}
